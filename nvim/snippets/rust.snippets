@@ -1,0 +1,24 @@
+extends all
+
+snippet mtest "#[cfg(test)]"
+	#[cfg(test)]
+	mod tests {
+		use super::*;
+
+		$0
+	}
+
+snippet test "#[test]"
+	#[test]
+	fn ${1:test_name}() {
+		${0}
+	}
+
+snippet main "fn main() { ... }"
+	fn main() {
+		${1:any}
+	}
+
+snippet allowdead "allow(dead_code)"
+	#[allow(dead_code)]
+	$0
