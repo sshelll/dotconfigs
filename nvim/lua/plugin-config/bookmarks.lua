@@ -8,7 +8,7 @@ require("bookmarks").setup({
         delete = "dd", -- Delete bookmarks(buf keymap)
         order = "<space><space>", -- Order bookmarks by frequency or updated_time(buf keymap)
         delete_on_virt = "dm", -- Delete bookmark at virt text line(global keymap)
-        show_desc = "md", -- show bookmark desc(global keymap)
+        show_desc = "mm", -- show bookmark desc(global keymap)
         focus_tags = "h", -- focus tags window
         focus_bookmarks = "l", -- focus bookmarks window
         toogle_focus = "<S-Tab>", -- toggle window focus (tags-window <-> bookmarks-window)
