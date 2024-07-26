@@ -165,12 +165,14 @@ local pluglist = {
         'MeanderingProgrammer/markdown.nvim',
         enabled = false,
         main = "render-markdown",
-        opts = {},
-        name = 'render-markdown',
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('plugin-config/markdown')
+        end
     },
     {
         "OXY2DEV/markview.nvim",
+        enabled = true,
         ft = "markdown",
         lazy = false,
         dependencies = {
