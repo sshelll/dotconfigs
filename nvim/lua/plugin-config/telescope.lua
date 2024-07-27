@@ -80,6 +80,7 @@ require('telescope').setup {
         },
         switch  = {
             matchers = {
+                switch_builtin_matchers.same_dir,
                 switch_builtin_matchers.go_impl,
                 switch_builtin_matchers.go_test,
                 switch_builtin_matchers.rust_mod,
@@ -88,7 +89,6 @@ require('telescope').setup {
                     name = "plugin config",
                     from = "/lua/plugins.lua$",
                     to = "/lua/plugin-config/*.lua",
-                    search = "/lua/plugin-config"
                 },
                 {
                     name = "plugin entry",
