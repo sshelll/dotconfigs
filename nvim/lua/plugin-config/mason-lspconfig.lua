@@ -67,12 +67,7 @@ require("mason-lspconfig").setup {
             lspconfig.tsserver.setup {}
         end,
         ["marksman"] = function()
-            lspconfig.marksman.setup {
-                cmd = { "marksman", "server" },
-                filetypes = { 'markdown', 'markdown.mdx' },
-                root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-                single_file_support = true,
-            }
+            lspconfig.marksman.setup {}
         end
     }
 }

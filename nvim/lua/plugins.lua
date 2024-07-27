@@ -171,6 +171,11 @@ local pluglist = {
         end
     },
     {
+        'richardbizik/nvim-toc',
+        ft = 'markdown',
+        opts = {},
+    },
+    {
         "OXY2DEV/markview.nvim",
         enabled = true,
         ft = "markdown",
