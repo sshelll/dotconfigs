@@ -46,7 +46,7 @@ require('render-markdown').setup({
         icons = { '󰼏 ', '󰎨 ', '󰼑 ', '󰎲 ', '󰼓 ', '󰼔 ' },
         -- Added to the sign column if enabled
         -- The 'level' is used to index into the array using a cycle
-        signs = { '󰫎 ' },
+        signs = { '󰌕 ' },
         -- Width of the heading background:
         --  block: width of the heading text
         --  full: full width of the window
@@ -64,12 +64,32 @@ require('render-markdown').setup({
         -- The 'level' is used to index into the array using a clamp
         -- Highlight for the heading and sign icons
         foregrounds = {
-            'RenderMarkdownH1Fg',
+            'RenderMarkdownH1',
             'RenderMarkdownH2',
             'RenderMarkdownH3',
             'RenderMarkdownH4',
             'RenderMarkdownH5',
             'RenderMarkdownH6',
+        },
+    },
+    bullet = {
+        enabled = true,
+        icons = { '', '○', '◆', '◇' },
+        right_pad = 0,
+        highlight = 'RenderMarkdownBullet',
+    },
+    checkbox = {
+        enabled = true,
+        unchecked = {
+            icon = ' ',
+            highlight = 'DiagnosticSignError',
+        },
+        checked = {
+            icon = ' ',
+            highlight = 'DiagnosticSignOk',
+        },
+        custom = {
+            todo = { raw = '[-]', rendered = ' ', highlight = 'DiagnosticSignWarn' },
         },
     },
 })
