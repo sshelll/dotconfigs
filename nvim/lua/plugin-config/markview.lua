@@ -1,4 +1,4 @@
-vim.api.nvim_set_hl(0, 'MarkviewCodeblock', { bg = '#2C3144' })
+vim.api.nvim_set_hl(0, 'MarkviewCodeblock', { bg = 'none' }) -- #2C3144
 require("markview").setup({
     buf_ignore = { "nofile" },
     modes = { "n", "no" },
@@ -14,7 +14,7 @@ require("markview").setup({
         pad_amount = 2,
 
         language_direction = "right",
-        sign = false,
+        sign = true,
     },
     checkboxes = {
         enable = true,

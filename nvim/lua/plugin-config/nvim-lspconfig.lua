@@ -38,9 +38,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 vim.cmd("edit")
                 return
             elseif fileType == 'json' then
-                vim.cmd("!biome check --apply " .. file)
+                vim.cmd("!biome check --write " .. file)
                 return
             elseif fileType == 'yaml' then
+                vim.cmd("!prettier --write " .. file)
+                return
+            elseif fileType == 'markdown' then
                 vim.cmd("!prettier --write " .. file)
                 return
             elseif fileType == 'sql' then
