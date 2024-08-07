@@ -1,14 +1,39 @@
-vim.api.nvim_set_hl(0, 'MarkviewCodeblock', { bg = 'none' }) -- #2C3144
-vim.api.nvim_set_hl(0, 'MarkviewH1', { fg = '#f38ba8', bg = '#553e53' })
-vim.api.nvim_set_hl(0, 'MarkviewH2', { fg = '#fab387', bg = '#57484b' })
-vim.api.nvim_set_hl(0, 'MarkviewH3', { fg = '#f9e2af', bg = '#575455' })
-vim.api.nvim_set_hl(0, 'MarkviewH4', { fg = '#a6e3a1', bg = '#425451' })
-vim.api.nvim_set_hl(0, 'MarkviewH5', { fg = '#74c7ec', bg = '#364d64' })
-vim.api.nvim_set_hl(0, 'MarkviewH6', { fg = '#b4befe', bg = '#464b68' })
+-- vim.api.nvim_set_hl(0, 'MarkviewCodeblock', { bg = 'none' }) -- #2C3144
 
 require("markview").setup({
     buf_ignore = { "nofile" },
     modes = { "n", "no" },
+    hybrid_modes = { "n", "no" },
+    highlight_groups = {
+        {
+            group_name = "MarkviewH1",
+            value = { fg = "#f38ba8", bg = "#553e53" },
+        },
+        {
+            group_name = "MarkviewH2",
+            value = { fg = "#fab387", bg = "#57484b" },
+        },
+        {
+            group_name = "MarkviewH3",
+            value = { fg = "#f9e2af", bg = "#575455" },
+        },
+        {
+            group_name = "MarkviewH4",
+            value = { fg = "#a6e3a1", bg = "#425451" },
+        },
+        {
+            group_name = "MarkviewH5",
+            value = { fg = "#74c7ec", bg = "#364d64" },
+        },
+        {
+            group_name = "MarkviewH6",
+            value = { fg = "#b4befe", bg = "#464b68" },
+        },
+        {
+            group_name = "MarkviewCodeblock",
+            value = { bg = "none" },
+        }
+    },
     headings = {
         enable = true,
         shift_width = 1,
@@ -104,4 +129,12 @@ require("markview").setup({
             }
         }
     },
+    block_quotes = {
+        enable = true,
+
+        default = {
+            border = "▋",
+        },
+        callouts = nil
+    }
 });
