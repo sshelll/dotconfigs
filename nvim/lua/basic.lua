@@ -24,6 +24,7 @@ if vim.g.transparent then
     vim.api.nvim_set_hl(0, "BufferTabpageFill", { fg = "#737aa2" })
     vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = "#DE4949" })
     vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = "#D78D44" })
+    vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#646984" })
 end
 
 vim.o.mouse = ''
