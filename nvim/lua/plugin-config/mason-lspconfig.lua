@@ -68,6 +68,9 @@ require("mason-lspconfig").setup {
         end,
         ["marksman"] = function()
             lspconfig.marksman.setup {}
+        end,
+        ["gradle_ls"] = function()
+            lspconfig.gradle_ls.setup {}
         end
     }
 }
