@@ -10,6 +10,7 @@ require("mason-lspconfig").setup {
         "jdtls",
         "bufls",
         "biome",
+        "ts_ls"
     },
     automatic_installation = false,
     handlers = {

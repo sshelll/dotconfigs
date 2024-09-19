@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 vim.cmd("edit")
                 return
             elseif fileType == 'json' then
-                vim.cmd("!biome check --write " .. file)
+                vim.cmd("!biome format --json-formatter-indent-style=space --write " .. file)
                 return
             elseif fileType == 'yaml' then
                 vim.cmd("!prettier --write " .. file)
