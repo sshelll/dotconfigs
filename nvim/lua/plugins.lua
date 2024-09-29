@@ -123,11 +123,17 @@ local pluglist = {
     },
     {
         'simrat39/rust-tools.nvim',
+        enabled = false,
         dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
         event = 'VeryLazy',
         config = function()
             require('plugin-config/rust-tools')
         end
+    },
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^5', -- Recommended
+        lazy = false, -- This plugin is already lazy
     },
     {
         'nvim-orgmode/orgmode',

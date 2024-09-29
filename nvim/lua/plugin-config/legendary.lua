@@ -93,9 +93,11 @@ require('legendary').setup({
                         local filetype = vim.bo.filetype
                         if filetype == 'lua' then
                             require('osv').run_this()
-                            return
+                        elseif filetype == 'rust' then
+                            vim.cmd.RustLsp('debuggables')
+                        else
+                            dap.continue()
                         end
-                        dap.continue()
                     end,
                     description = 'continue',
                 },
@@ -167,11 +169,7 @@ require('legendary').setup({
                         if fileType == 'go' then
                             require('telescope').extensions.gott.gott()
                         elseif fileType == 'rust' then
-                            local args = require('util/common').readInput('args: ')
-                            if args.canceled then
-                                return
-                            end
-                            vim.cmd('!cargo test -- ' .. args.input)
+                            vim.cmd.RustLsp('testables')
                         elseif fileType == 'java' then
                             local args = require('util/common').readInput('test class (y/N): ')
                             if not args.canceled and args == 'y' then

@@ -40,6 +40,7 @@ require("mason-lspconfig").setup {
                 },
             }
         end,
+        ["rust_analyzer"] = function() end,
         ["jdtls"] = function() end,
         ["sqlls"] = function()
             lspconfig.sqlls.setup {

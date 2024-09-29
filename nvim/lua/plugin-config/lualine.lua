@@ -201,10 +201,10 @@ ins_left {
 --     color = { fg = colors.blue, gui = 'bold' },
 -- }
 
-ins_right {
-    require("noice").api.status.command.get,
-    color = { fg = "#ff9e64" },
-}
+-- ins_right {
+--     require("noice").api.status.command.get,
+--     color = { fg = "#ff9e64" },
+-- }
 
 ins_right {
     'selectioncount',
