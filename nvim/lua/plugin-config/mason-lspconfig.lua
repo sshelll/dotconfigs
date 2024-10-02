@@ -40,7 +40,20 @@ require("mason-lspconfig").setup {
                 },
             }
         end,
-        ["rust_analyzer"] = function() end,
+        ["rust_analyzer"] = function()
+            -- lspconfig.rust_analyzer.setup {
+            --     settings = {
+            --         ["rust-analyzer"] = {
+            --             checkOnSave = {
+            --                 command = "clippy",
+            --             },
+            --             cargo = {
+            --                 features = "all",
+            --             },
+            --         },
+            --     },
+            -- }
+        end,
         ["jdtls"] = function() end,
         ["sqlls"] = function()
             lspconfig.sqlls.setup {
