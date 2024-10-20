@@ -1,0 +1,47 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = '''[$all](bold green)[❯ $git_status](bold green)'''
+
+[character]
+success_symbol = ''
+error_symbol = ''
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[git_branch]
+symbol = ' '
+format = '[$symbol$branch(:$remote_branch)]($style) '
+truncation_length = 4
+truncation_symbol = ''
+ignore_branches = ['master', 'main']
+
+[git_status]
+conflicted = ''
+modified = ''
+format = '([$modified]($style) )'
+
+[java]
+symbol = ' '
+
+[gcloud]
+symbol = '󰅟 '
+
+[gradle]
+symbol = ' '
+
+[kotlin]
+symbol = '󱈙 '
+
+[rust]
+symbol = '󱘗 '
+
+[golang]
+symbol = ' '
+
+[nodejs]
+symbol = '󰎙 '
