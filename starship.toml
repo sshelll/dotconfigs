@@ -3,7 +3,7 @@
 
 add_newline = true
 
-format = '''[$all](bold green)[$git_status](bold white)[ ❯ ](bold 171)'''
+format = '''[$all](bold green)[$git_status](bold white)[❯ ](bold 171)'''
 
 [character]
 success_symbol = ''
@@ -27,7 +27,7 @@ renamed = '[  ⇾$count](bold blue)'
 deleted = '[ 󱪢 -$count](bold red)'
 untracked = '[  +$count](bold fg:105)'
 up_to_date = '✔✘'
-format = '(  [$modified$renamed$deleted$untracked]($style))'
+format = '(  [$modified$renamed$deleted$untracked ]($style))'
 
 [java]
 symbol = ' '
