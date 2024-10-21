@@ -22,12 +22,12 @@ ignore_branches = ['master', 'main']
 
 [git_status]
 conflicted = ''
-modified = '[󱧃 ~$count](bold yellow)'
-renamed = '[  ⇾$count](bold blue)'
-deleted = '[ 󱪢 -$count](bold red)'
-untracked = '[  +$count](bold fg:105)'
+modified = '[󱧃 ~$count ](bold yellow)'
+renamed = '[ ⇾$count ](bold blue)'
+deleted = '[󱪢 -$count ](bold red)'
+untracked = '[ +$count ](bold fg:105)'
 up_to_date = '✔✘'
-format = '(  [$modified$renamed$deleted$untracked ]($style))'
+format = '(  [$modified$renamed$deleted$untracked]($style))'
 
 [java]
 symbol = ' '
