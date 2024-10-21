@@ -40,3 +40,7 @@ require 'nvim-web-devicons'.setup {
         }
     },
 }
+
+if vim.g.transparent then
+    vim.api.nvim_set_hl(0, "DevIconDefaultCurrent", { fg = "#c0caf5" })
+end

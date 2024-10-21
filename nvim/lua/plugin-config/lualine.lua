@@ -139,7 +139,7 @@ ins_left {
 ins_left {
     'diff',
     -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = ' ', removed = ' ' },
+    symbols = { removed = " ", modified = " ", added = " " },
     sources = function()
         local gitsigns = vim.b.gitsigns_status_dict
         if gitsigns then
