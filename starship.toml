@@ -14,22 +14,26 @@ error_symbol = ''
 disabled = true
 
 [git_branch]
-symbol = ' '
+symbol = ' '
 format = '[$symbol$branch(:$remote_branch)]($style) '
-truncation_length = 4
-truncation_symbol = ''
+truncation_length = 15
+truncation_symbol = '…'
 ignore_branches = ['master', 'main']
 
 [git_status]
 conflicted = ''
-modified = ''
-format = '([$modified]($style) )'
+modified = '[ ](bold yellow)'
+renamed = '[ ](bold blue)'
+deleted = '[ ](bold red)'
+untracked = '[ ](bold fg:214)'
+up_to_date = '✔✘'
+format = '([$modified$renamed$deleted$untracked]($style))'
 
 [java]
 symbol = ' '
 
 [gcloud]
-symbol = '󰅟 '
+symbol = '󱇱 '
 
 [gradle]
 symbol = ' '
@@ -45,3 +49,6 @@ symbol = ' '
 
 [nodejs]
 symbol = '󰎙 '
+
+[lua]
+symbol = ' '
