@@ -8,7 +8,6 @@ require("mason-lspconfig").setup {
         "bashls",
         "rust_analyzer",
         "jdtls",
-        "bufls",
         "biome",
         "ts_ls"
     },
