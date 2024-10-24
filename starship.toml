@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
+add_newline = false
 
 format = '''[$all](bold green)[$git_status](bold white)[❯ ](bold 171)'''
 
@@ -26,14 +26,14 @@ modified = '[󱧃 ~$count ](bold yellow)'
 renamed = '[ ⇾$count ](bold blue)'
 deleted = '[󱪢 -$count ](bold red)'
 untracked = '[ +$count ](bold fg:105)'
-up_to_date = '✔✘'
+# up_to_date = '✔✘'
 format = '(  [$modified$renamed$deleted$untracked]($style))'
 
 [java]
-symbol = ' '
+symbol = '󰬷 '
 
 [gcloud]
-symbol = '󱇱 '
+symbol = ' '
 
 [gradle]
 symbol = ' '
