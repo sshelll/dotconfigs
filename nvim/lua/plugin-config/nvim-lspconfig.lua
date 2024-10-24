@@ -55,6 +55,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             elseif fileType == 'java' then
                 vim.cmd("!google-java-format -r " .. file)
                 return
+            elseif fileType == 'proto' then
+                vim.cmd("!buf format -w " .. file)
+                return
             end
             vim.lsp.buf.format { async = true }
         end, opts)
@@ -89,7 +92,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Java auto-formatting
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "*.java",
     callback = function()
         local file = vim.fn.expand('%:p')
