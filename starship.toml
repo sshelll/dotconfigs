@@ -8,6 +8,7 @@ format = '''[$all](bold green)[$git_status](bold white)[❯ ](bold 171)'''
 [character]
 success_symbol = ''
 error_symbol = ''
+vimcmd_symbol ="[❮](bold 187)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
