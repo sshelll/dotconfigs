@@ -1,10 +1,20 @@
 local pluglist = {
     {
+        'uga-rosa/ccc.nvim',
+        opts = {
+            highlighter = {
+                auto_enable = true,
+                lsp = true,
+            },
+        },
+    },
+    {
         'MagicDuck/grug-far.nvim',
         opts = {},
     },
     {
         'norcalli/nvim-colorizer.lua',
+        enabled = false,
         config = function()
             require 'colorizer'.setup()
         end
@@ -133,7 +143,7 @@ local pluglist = {
     {
         'mrcjkb/rustaceanvim',
         version = '^5', -- Recommended
-        lazy = false, -- This plugin is already lazy
+        lazy = false,   -- This plugin is already lazy
     },
     {
         'nvim-orgmode/orgmode',
