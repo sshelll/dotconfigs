@@ -84,12 +84,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Java Auto-Import
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.java",
-    callback = function()
-        require 'jdtls'.organize_imports()
-    end
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--     pattern = "*.java",
+--     callback = function()
+--         require 'jdtls'.organize_imports()
+--     end
+-- })
 
 -- Java auto-formatting
 vim.api.nvim_create_autocmd("BufWritePost", {

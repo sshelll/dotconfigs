@@ -51,6 +51,15 @@ local config = {
     root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
 }
 
+config.settings = {
+    sources = {
+        organizeImports = {
+            starThreshold = 9999,
+            staticStarThreshold = 9999,
+        },
+    },
+}
+
 local bundles = {
     java_debug_jar,
 };
