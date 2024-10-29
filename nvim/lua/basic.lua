@@ -9,7 +9,7 @@ vim.o.background = 'dark'
 -- see init.lua
 if vim.g.transparent then
     vim.api.nvim_set_hl(0, "LazyNormal", { fg = "#c0caf5" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#c0caf5" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#c0caf5", bg = "#1a1a33" })
     vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#29a4bd" })
     vim.api.nvim_set_hl(0, "DiffChange", { bg = "#4A4D2E" })
     vim.api.nvim_set_hl(0, "DiffText", { bg = "#60643D" })
