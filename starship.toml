@@ -24,7 +24,7 @@ ignore_branches = ['master', 'main']
 [git_status]
 conflicted = ''
 modified = '[󱧃 ~$count ](bold yellow)'
-renamed = '[ ⇾$count ](bold blue)'
+renamed = '[ 󱞧 $count ](bold blue)'
 deleted = '[󱪢 -$count ](bold red)'
 untracked = '[ +$count ](bold fg:105)'
 # up_to_date = '✔✘'

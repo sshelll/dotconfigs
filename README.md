@@ -1,6 +1,6 @@
 # Dotconfigs
 > ~/.config on MacOS  
-> Including: alacritty, lazygit, nvim, tmux
+> Including: alacritty, lazygit, nvim, tmux, starship
 
 ## Install
 ```sh
