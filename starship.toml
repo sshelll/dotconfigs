@@ -8,7 +8,7 @@ format = '''[$all](bold green)[$git_status](bold white)[❯ ](bold 171)'''
 [character]
 success_symbol = ''
 error_symbol = ''
-vimcmd_symbol ="[❮](bold 187)"
+vimcmd_symbol = "[❮](bold 187)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -19,7 +19,7 @@ symbol = ' '
 format = '[$symbol$branch(:$remote_branch)]($style) '
 truncation_length = 15
 truncation_symbol = '…'
-ignore_branches = ['master', 'main']
+ignore_branches = ['']
 
 [git_status]
 conflicted = ''
@@ -31,7 +31,7 @@ untracked = '[ +$count ](bold fg:105)'
 format = '(  [$modified$renamed$deleted$untracked]($style))'
 
 [java]
-symbol = '󰬷 '
+symbol = ' '
 
 [gcloud]
 symbol = ' '
@@ -40,10 +40,10 @@ symbol = ' '
 symbol = ' '
 
 [kotlin]
-symbol = '󱈙 '
+symbol = ' '
 
 [rust]
-symbol = '󱘗 '
+symbol = ' '
 
 [golang]
 symbol = ' '
