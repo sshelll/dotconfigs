@@ -145,16 +145,7 @@ require('legendary').setup({
                         elseif fileType == 'lua' then
                             require("util/cmd").run_cmd_ui('!lua ' .. vim.fn.expand('%:p'), { buf = {} })
                         elseif fileType == 'rust' then
-                            local common = require('util/common')
-                            local envs = common.readInput('envs: ')
-                            if envs.canceled then
-                                return
-                            end
-                            local args = common.readInput('args: ')
-                            if args.canceled then
-                                return
-                            end
-                            vim.cmd('!' .. envs.input .. ' cargo run -- ' .. args.input)
+                            vim.cmd.RustLsp('runnables')
                         else
                             local err = fileType .. ' is not supported'
                             vim.api.nvim_err_writeln(err)
