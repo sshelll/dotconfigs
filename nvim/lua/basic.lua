@@ -29,6 +29,8 @@ if vim.g.transparent then
     vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = "#DE4949" })
     vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = "#D78D44" })
     vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#646984" })
+    vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#666D8D" })
+    vim.api.nvim_set_hl(0, "CopilotAnnotation", { fg = "#666D8D" })
 end
 
 vim.o.mouse = ''
