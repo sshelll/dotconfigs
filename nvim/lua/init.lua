@@ -13,7 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: set transparent manually, this is not a neovim builtin feature
-vim.g.transparent = true
+if not vim.g.neovide then
+    vim.g.transparent = true
+end
 
 -- init plug mgr, for now I use lazy.nvim
 require("plugins")
