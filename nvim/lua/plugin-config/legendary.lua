@@ -93,8 +93,6 @@ require('legendary').setup({
                         local filetype = vim.bo.filetype
                         if filetype == 'lua' then
                             require('osv').run_this()
-                        elseif filetype == 'rust' then
-                            vim.cmd.RustLsp('debuggables')
                         else
                             dap.continue()
                         end

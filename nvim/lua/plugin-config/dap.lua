@@ -19,14 +19,20 @@ dap.adapters.delve_no_optimize = {
     }
 }
 
-dap.adapters.codelldb = {
-    type = 'server',
-    port = '${port}',
-    executable = {
-        command = 'codelldb',
-        args = { '--port', '${port}' },
-    }
-}
+
+local codelldb_path = vim.fn.stdpath('data') .. '/mason/bin/codelldb'
+local liblldb_path = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension/lldb/lib/liblldb.dylib'
+local cfg = require('rustaceanvim.config')
+dap.adapters.codelldb = cfg.get_codelldb_adapter(codelldb_path, liblldb_path)
+
+-- dap.adapters.codelldb = {
+--     type = 'server',
+--     port = '${port}',
+--     executable = {
+--         command = 'codelldb',
+--         args = { '--port', '${port}' },
+--     }
+-- }
 
 dap.adapters.nlua = function(callback, config)
     callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
@@ -99,21 +105,6 @@ dap.configurations.cpp = {
         request = "launch",
         program = function()
             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-        cwd = '${workspaceFolder}',
-        stopOnEntry = false,
-    },
-}
-
-dap.configurations.rust = {
-    {
-        name = "Debug project",
-        type = "codelldb",
-        request = "launch",
-        program = function()
-            vim.cmd('RustBuild')
-            local project = vim.fn.getcwd():match("([^/\\]+)$")
-            return vim.fn.getcwd() .. '/target/debug/' .. project
         end,
         cwd = '${workspaceFolder}',
         stopOnEntry = false,
