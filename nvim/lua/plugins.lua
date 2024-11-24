@@ -1,5 +1,12 @@
 local pluglist = {
     {
+        "sphamba/smear-cursor.nvim",
+        enabled = false,
+        config = function ()
+            require("plugin-config/smear-cursor")
+        end
+    },
+    {
         'uga-rosa/ccc.nvim',
         opts = {
             highlighter = {
