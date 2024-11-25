@@ -2,9 +2,16 @@ local pluglist = {
     {
         "sphamba/smear-cursor.nvim",
         enabled = false,
-        config = function ()
+        config = function()
             require("plugin-config/smear-cursor")
         end
+    },
+    {
+        "nvzone/timerly",
+        dependencies = {
+            "nvzone/volt",
+        },
+        opts = {}
     },
     {
         'uga-rosa/ccc.nvim',

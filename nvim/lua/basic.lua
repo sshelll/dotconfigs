@@ -52,6 +52,7 @@ vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.cmd('autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab')
 vim.cmd('autocmd FileType go setlocal noexpandtab')
+vim.cmd('autocmd FileType proto setlocal tabstop=2 shiftwidth=2 expandtab')
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
