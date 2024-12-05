@@ -1,4 +1,5 @@
 local pluglist = {
+    { "tiagovla/scope.nvim",  opts = {} },
     {
         "sphamba/smear-cursor.nvim",
         enabled = false,

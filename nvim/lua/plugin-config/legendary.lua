@@ -108,6 +108,8 @@ require('legendary').setup({
             keymaps = {
                 { '≤', function() vim.cmd('BufferPrevious') end, description = 'previous buffer' },
                 { '≥', function() vim.cmd('BufferNext') end, description = 'next buffer' },
+                { '“', function() vim.cmd('tabprevious') end, description = 'previous tab' },
+                { '‘', function() vim.cmd('tabnext') end, description = 'next tab' },
                 { 'œ', function() vim.cmd('BufferClose') end, description = 'close buffer' },
                 { 'π', function() vim.cmd('BufferPin') end, description = 'pin buffer' },
                 { 'ç', function() vim.cmd('BufferCloseAllButCurrentOrPinned') end, description = 'close all buffers but pinned' },
