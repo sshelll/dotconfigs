@@ -9,7 +9,8 @@ require("mason-lspconfig").setup {
         "rust_analyzer",
         "jdtls",
         "biome",
-        "ts_ls"
+        "ts_ls",
+        "tinymist"
     },
     automatic_installation = false,
     handlers = {
