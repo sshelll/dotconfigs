@@ -62,11 +62,11 @@ local pluglist = {
     { "Bilal2453/luvit-meta", lazy = true },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
-        branch = "canary",
         dependencies = {
             { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
             { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
         },
+        build = "make tiktoken",
         opts = {
             prompts = {
                 Explain = {
@@ -566,6 +566,7 @@ local pluglist = {
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             'neovim/nvim-lspconfig',
+            'onsails/lspkind.nvim',
             {
                 'MattiasMTS/cmp-dbee',
                 ft = { 'sql', 'mysql', 'plsql' },
