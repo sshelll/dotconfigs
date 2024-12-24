@@ -18,3 +18,91 @@ snippet warning "warning block quote"
 
 snippet caution "caution block quote"
 	> [!CAUTION]
+
+snippet foldblue "hexo fluid fold block"
+	{% fold info @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet fold "hexo fluid fold default"
+	{% fold default @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet foldpurple "hexo fluid fold primary"
+	{% fold primary @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet foldblue "hexo fluid fold info"
+	{% fold info @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet foldgreen "hexo fluid fold success"
+	{% fold success @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet foldyellow "hexo fluid fold warning"
+	{% fold warning @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet foldred "hexo fluid fold danger"
+	{% fold danger @${1:title} %}
+	${2:content}
+	{% endfold %}
+
+snippet tagpurple "hexo fluid tag primary"
+	{% note primary %}
+	${1:content}
+	{% endnote %}
+
+snippet taggrey "hexo fluid tag secondary"
+	{% note secondary %}
+	${1:content}
+	{% endnote %}
+
+snippet taggreen "hexo fluid tag success"
+	{% note success %}
+	${1:content}
+	{% endnote %}
+
+snippet tagred "hexo fluid tag danger"
+	{% note danger %}
+	${1:content}
+	{% endnote %}
+
+snippet tagyellow "hexo fluid tag warning"
+	{% note warning %}
+	${1:content}
+	{% endnote %}
+
+snippet tagblue "hexo fluid tag info"
+	{% note info %}
+	${1:content}
+	{% endnote %}
+
+snippet taglight "hexo fluid tag light"
+	{% note light %}
+	${1:content}
+	{% endnote %}
+
+snippet linetagpurple "hexo fluid line tag primary"
+	{% label primary @text %}
+
+snippet linetaggrey "hexo fluid line tag secondary"
+	{% label secondary @text %}
+
+snippet linetaggreen "hexo fluid line tag success"
+	{% label success @text %}
+
+snippet linetagred "hexo fluid line tag danger"
+	{% label danger @text %}
+
+snippet linetagyellow "hexo fluid line tag warning"
+	{% label warning @text %}
+
+snippet linetagblue "hexo fluid line tag info"
+	{% label info @text %}
