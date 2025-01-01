@@ -41,39 +41,40 @@ local kind_icons = {
 
 -- Setup nvim-cmp
 cmp.setup {
+    view = {
+        entries = "custom" -- can be "custom", "wildmenu" or "native"
+    },
     window = {
-        completion = {
+        completion = cmp.config.window.bordered({
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
             col_offset = -3,
             side_padding = 0,
-        },
+        }),
+        documentation = cmp.config.window.bordered(
+            {
+                winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+                col_offset = 0,
+                side_padding = 0,
+            }
+        ),
     },
     formatting = {
         format = function(entry, vim_item)
-            if entry.source.name == 'cmp-dbee' then
-                vim_item.kind = "󰡦 [SQL]"
-                vim_item.menu = "[SQL]"
-                return vim_item
-            else
-                vim_item.menu = ({
-                    path = "[Path]",
-                    buffer = "[Buffer]",
-                    nvim_lsp = "[LSP]",
-                    luasnip = "[LuaSnip]",
-                    vsnip = "[VSnip]",
-                    nvim_lua = "[Lua]",
-                })[entry.source.name]
-                if vim_item.menu ~= nil then
-                    vim_item.menu = string.format("%-10s", "(" .. vim_item.kind .. ")") .. ' ' .. vim_item.menu
-                end
-                local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-                local strings = vim.split(kind.kind, "%s", { trimempty = true })
-                kind.kind = " " .. (strings[1] or "") .. " "
-                return vim_item
-            end
+            -- Kind icons
+            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+            -- Source
+            vim_item.menu = ({
+                buffer = "[Buffer]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[LuaSnip]",
+                vsnip = "[VSnip]",
+                nvim_lua = "[Lua]",
+                latex_symbols = "[LaTeX]",
+            })[entry.source.name]
+            return vim_item
         end,
         expandable_indicator = true,
-        fields = { 'kind', 'abbr', 'menu' }
+        fields = { "abbr", "kind", "menu" }
     },
     snippet = {
         expand = function(args)
@@ -154,44 +155,5 @@ cmp.event:on(
 vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
 
 -- Customization for Pmenu
--- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
--- vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#22252A" })
-vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#3c405a" })
-
-vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
-vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#82AAFF", bg = "NONE", bold = true })
-vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#82AAFF", bg = "NONE", bold = true })
-vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#C792EA", bg = "NONE", italic = true })
-
-vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#EED8DA", bg = "#B5585F" })
-vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#EED8DA", bg = "#B5585F" })
-vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#EED8DA", bg = "#B5585F" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#C3E88D", bg = "#9FBD73" })
-vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#C3E88D", bg = "#9FBD73" })
-vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#C3E88D", bg = "#9FBD73" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#FFE082", bg = "#D4BB6C" })
-vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#FFE082", bg = "#D4BB6C" })
-vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = "#FFE082", bg = "#D4BB6C" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = "#EADFF0", bg = "#A377BF" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#C5CDD9", bg = "#7E8294" })
-vim.api.nvim_set_hl(0, "CmpItemKindFile", { fg = "#C5CDD9", bg = "#7E8294" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindUnit", { fg = "#F5EBD9", bg = "#D4A959" })
-vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#F5EBD9", bg = "#D4A959" })
-vim.api.nvim_set_hl(0, "CmpItemKindFolder", { fg = "#F5EBD9", bg = "#D4A959" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#DDE5F5", bg = "#6C8ED4" })
-vim.api.nvim_set_hl(0, "CmpItemKindValue", { fg = "#DDE5F5", bg = "#6C8ED4" })
-vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", { fg = "#DDE5F5", bg = "#6C8ED4" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "#D8EEEB", bg = "#58B5A8" })
-vim.api.nvim_set_hl(0, "CmpItemKindColor", { fg = "#D8EEEB", bg = "#58B5A8" })
-vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#D8EEEB", bg = "#58B5A8" })
+vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
+vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9" })

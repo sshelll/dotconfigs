@@ -53,11 +53,11 @@ require('incline').setup {
         groups = {
             InclineNormal = {
                 default = true,
-                group = "NormalFloat"
+                group = "LazyNormal"
             },
             InclineNormalNC = {
                 default = true,
-                group = "NormalFloat"
+                group = "LazyNormal"
             }
         }
     },

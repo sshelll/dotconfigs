@@ -1,4 +1,12 @@
 local pluglist = {
+    {
+        "Fildo7525/pretty_hover",
+        event = "LspAttach",
+        opts = {
+            max_width = 120,
+            max_height = 30,
+        },
+    },
     { "tiagovla/scope.nvim",  opts = {} },
     {
         "sphamba/smear-cursor.nvim",
@@ -537,6 +545,9 @@ local pluglist = {
     {
         'neovim/nvim-lspconfig',
         lazy = false,
+        dependencies = {
+            "Fildo7525/pretty_hover",
+        },
         config = function()
             require('plugin-config/nvim-lspconfig')
         end
@@ -566,6 +577,15 @@ local pluglist = {
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             'neovim/nvim-lspconfig',
+            'hrsh7th/vim-vsnip',
+            'hrsh7th/vim-vsnip-integ',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lua',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-vsnip',
             'onsails/lspkind.nvim',
             {
                 'MattiasMTS/cmp-dbee',
@@ -575,36 +595,6 @@ local pluglist = {
         config = function()
             require('plugin-config/nvim-cmp')
         end
-    },
-    {
-        'hrsh7th/cmp-path',
-        dependencies = { 'hrsh7th/nvim-cmp' },
-        event = 'VeryLazy'
-    },
-    {
-        'hrsh7th/cmp-cmdline',
-        dependencies = { 'hrsh7th/nvim-cmp' },
-        event = 'VeryLazy'
-    },
-    {
-        'hrsh7th/cmp-buffer',
-        dependencies = { 'hrsh7th/nvim-cmp' },
-        event = 'VeryLazy'
-    },
-    {
-        'hrsh7th/cmp-nvim-lsp',
-        dependencies = { 'hrsh7th/nvim-cmp' },
-        event = 'VeryLazy'
-    },
-    {
-        'hrsh7th/cmp-nvim-lua',
-        dependencies = { 'hrsh7th/nvim-cmp' },
-        event = 'VeryLazy'
-    },
-    {
-        'saadparwaiz1/cmp_luasnip',
-        dependencies = { 'hrsh7th/nvim-cmp' },
-        lazy = 'VeryLazy',
     },
     {
         'simrat39/symbols-outline.nvim',
@@ -628,21 +618,6 @@ local pluglist = {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         opts = {},
-    },
-    {
-        'hrsh7th/vim-vsnip',
-        lazy = false,
-        dependencies = { 'hrsh7th/nvim-cmp' },
-    },
-    {
-        'hrsh7th/vim-vsnip-integ',
-        lazy = false,
-        dependencies = { 'hrsh7th/nvim-cmp' },
-    },
-    {
-        'hrsh7th/cmp-vsnip',
-        lazy = false,
-        dependencies = { 'hrsh7th/nvim-cmp' },
     },
     {
         'nvim-tree/nvim-web-devicons',
