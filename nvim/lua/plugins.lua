@@ -1,5 +1,30 @@
 local pluglist = {
     {
+        "zbirenbaum/copilot.lua",
+        lazy = true,
+        config = function()
+            require('plugin-config/copilot')
+        end
+    },
+    {
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        lazy = false,
+        version = false,
+        config = function()
+            require('plugin-config/avante')
+        end,
+        build = "make",
+        dependencies = {
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "hrsh7th/nvim-cmp",
+            "nvim-tree/nvim-web-devicons",
+            "zbirenbaum/copilot.lua", -- for providers='copilot'
+        },
+    },
+    {
         "jbyuki/venn.nvim",
         config = function()
             require("plugin-config/venn")
@@ -76,6 +101,7 @@ local pluglist = {
     { "Bilal2453/luvit-meta", lazy = true },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
+        enabled = false,
         dependencies = {
             { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
             { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
@@ -413,6 +439,7 @@ local pluglist = {
     },
     {
         'github/copilot.vim',
+        enabled = false,
         event = 'VeryLazy',
         config = function()
             vim.keymap.set('i', '<C-c>', 'copilot#Accept("\\<CR>")', {

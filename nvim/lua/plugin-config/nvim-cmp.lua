@@ -155,5 +155,5 @@ cmp.event:on(
 vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
 
 -- Customization for Pmenu
-vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
+-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
 vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9" })
