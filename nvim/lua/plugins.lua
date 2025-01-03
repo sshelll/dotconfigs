@@ -1,5 +1,11 @@
 local pluglist = {
     {
+        "jbyuki/venn.nvim",
+        config = function()
+            require("plugin-config/venn")
+        end
+    },
+    {
         "Fildo7525/pretty_hover",
         event = "LspAttach",
         opts = {
