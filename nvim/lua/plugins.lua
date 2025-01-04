@@ -151,23 +151,13 @@ local pluglist = {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        opts = {
-            -- add any options here
-        },
+        opts = {},
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
         },
         config = function()
             require('plugin-config/noice')
-        end
-    },
-    {
-        "rgroli/other.nvim",
-        lazy = false,
-        event = "VeryLazy",
-        config = function()
-            require('plugin-config/other')
         end
     },
     {
@@ -202,6 +192,7 @@ local pluglist = {
     },
     {
         'nvim-orgmode/orgmode',
+        enabled = false,
         dependencies = {
             { 'nvim-treesitter/nvim-treesitter', lazy = true },
         },
@@ -297,19 +288,6 @@ local pluglist = {
         end,
     },
     {
-        'sshelll/telescope-switch.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
-        lazy = true,
-    },
-    {
-        'sshelll/telescope-gott.nvim',
-        dependencies = {
-            'nvim-telescope/telescope.nvim',
-            'nvim-lua/plenary.nvim',
-        },
-        lazy = true,
-    },
-    {
         'rcarriga/nvim-notify',
         lazy = false,
         config = function()
@@ -327,10 +305,6 @@ local pluglist = {
         config = function()
             require('plugin-config/comment')
         end
-    },
-    {
-        'Mofiqul/vscode.nvim',
-        lazy = true,
     },
     {
         'nvimdev/dashboard-nvim',
@@ -463,10 +437,6 @@ local pluglist = {
         lazy = true,
     },
     {
-        'cocopon/iceberg.vim',
-        lazy = true,
-    },
-    {
         'rhysd/clever-f.vim',
         event = 'VeryLazy',
     },
@@ -490,13 +460,13 @@ local pluglist = {
         end
     },
     {
-        'nvim-lua/plenary.nvim',
-        lazy = false,
-    },
-    {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'sshelll/telescope-gott.nvim',
+            'sshelll/telescope-switch.nvim',
+        },
         config = function()
             require('plugin-config/telescope')
         end
