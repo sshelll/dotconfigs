@@ -23,9 +23,9 @@ require('copilot').setup({
             accept = "<C-c>",
             accept_word = false,
             accept_line = false,
-            next = "∆",
-            prev = "˚",
-            dismiss = "˙",
+            next = "∆", -- <M-j> on macOS
+            prev = "˚", -- <M-k> on macOS
+            dismiss = "˙", -- <M-h> on macOS
         },
     },
     filetypes = {
