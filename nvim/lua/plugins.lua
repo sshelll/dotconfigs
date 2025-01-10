@@ -239,8 +239,6 @@ local pluglist = {
     },
     {
         "OXY2DEV/markview.nvim",
-        enabled = true,
-        ft = "markdown",
         lazy = false,
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
