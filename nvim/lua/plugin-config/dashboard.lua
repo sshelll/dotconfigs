@@ -38,14 +38,6 @@ db.setup({
                 key = 'i',
             },
             {
-                desc = '󱤟 Database Client',
-                group = '@debug',
-                action = function()
-                    require("dbee").toggle()
-                end,
-                key = 'd',
-            },
-            {
                 icon = ' ',
                 icon_hl = '@variable',
                 desc = 'Files',

@@ -47,13 +47,6 @@ local pluglist = {
         end
     },
     {
-        "nvzone/timerly",
-        dependencies = {
-            "nvzone/volt",
-        },
-        opts = {}
-    },
-    {
         'uga-rosa/ccc.nvim',
         opts = {
             highlighter = {
@@ -72,22 +65,6 @@ local pluglist = {
         config = function()
             require 'colorizer'.setup()
         end
-    },
-    {
-        'javiorfo/nvim-soil',
-        dependencies = { 'javiorfo/nvim-nyctophilia' },
-        lazy = true,
-        ft = "plantuml",
-        opts = {
-            puml_jar = "plantuml",
-            image = {
-                darkmode = true, -- Enable or disable darkmode
-                format = "svg",  -- Choose between png or svg
-                execute_to_open = function(img)
-                    return "open -a Arc" .. img
-                end
-            }
-        }
     },
     {
         "folke/lazydev.nvim",
@@ -136,19 +113,6 @@ local pluglist = {
         end
     },
     {
-        "kndndrj/nvim-dbee",
-        lazy = true,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
-        build = function()
-            require("dbee").install("go")
-        end,
-        config = function()
-            require("dbee").setup()
-        end,
-    },
-    {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {},
@@ -189,17 +153,6 @@ local pluglist = {
         'mrcjkb/rustaceanvim',
         version = '^5', -- Recommended
         lazy = false,   -- This plugin is already lazy
-    },
-    {
-        'nvim-orgmode/orgmode',
-        enabled = false,
-        dependencies = {
-            { 'nvim-treesitter/nvim-treesitter', lazy = true },
-        },
-        event = 'VeryLazy',
-        config = function()
-            require('plugin-config/orgmode')
-        end,
     },
     {
         'akinsho/toggleterm.nvim',
@@ -253,13 +206,6 @@ local pluglist = {
         dependencies = { 'nvim-treesitter' },
         config = function()
             require('treesj').setup({ --[[ your config ]] })
-        end,
-    },
-    {
-        'ashfinal/qfview.nvim',
-        event = 'VeryLazy',
-        config = function()
-            require('qfview').setup()
         end,
     },
     {
@@ -356,10 +302,6 @@ local pluglist = {
         config = function()
             require('plugin-config/legendary')
         end
-    },
-    {
-        'kkharji/sqlite.lua',
-        lazy = false,
     },
     {
         'mfussenegger/nvim-dap-python',
