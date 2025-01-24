@@ -44,8 +44,8 @@ require('avante').setup(
                 prev = "[x",
             },
             suggestion = {
-                accept = "<M-l>",
-                next = "<M-]>",
+                accept = "<C-c>",
+                next = "∆",
                 prev = "<M-[>",
                 dismiss = "<C-]>",
             },
