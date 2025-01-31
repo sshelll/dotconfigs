@@ -1,5 +1,22 @@
 local pluglist = {
     {
+        "nvim-neotest/neotest",
+        dependencies = {
+            "nvim-neotest/nvim-nio",
+            "nvim-lua/plenary.nvim",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "mrcjkb/rustaceanvim",
+        },
+        config = function()
+            require('neotest').setup {
+                adapters = {
+                    require('rustaceanvim.neotest')
+                },
+            }
+        end
+    },
+    {
         "zbirenbaum/copilot.lua",
         lazy = true,
         config = function()
@@ -153,6 +170,11 @@ local pluglist = {
         'mrcjkb/rustaceanvim',
         version = '^5', -- Recommended
         lazy = false,   -- This plugin is already lazy
+        config = function()
+            vim.g.rustaceanvim = {
+                tools = { test_executor = 'neotest' }
+            }
+        end
     },
     {
         'akinsho/toggleterm.nvim',
