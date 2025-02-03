@@ -170,11 +170,11 @@ local pluglist = {
         'mrcjkb/rustaceanvim',
         version = '^5', -- Recommended
         lazy = false,   -- This plugin is already lazy
-        config = function()
-            vim.g.rustaceanvim = {
-                tools = { test_executor = 'neotest' }
-            }
-        end
+        -- config = function()
+        --     vim.g.rustaceanvim = {
+        --         tools = { test_executor = 'background' }
+        --     }
+        -- end
     },
     {
         'akinsho/toggleterm.nvim',
