@@ -28,16 +28,16 @@ dapui.setup(
                         size = 0.25
                     },
                     {
-                        id = "breakpoints",
+                        id = "stacks",
                         size = 0.25
                     },
                     {
-                        id = "stacks",
+                        id = "console",
                         size = 0.25
                     },
                 },
                 position = "left",
-                size = 40
+                size = 60
             },
         },
         mappings = {

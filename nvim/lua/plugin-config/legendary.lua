@@ -92,6 +92,8 @@ require('legendary').setup({
                         local filetype = vim.bo.filetype
                         if filetype == 'lua' then
                             require('osv').run_this()
+                        elseif filetype == 'rust' and require('dap').session() == nil then
+                            vim.cmd.RustLsp('debuggables')
                         else
                             dap.continue()
                         end
@@ -129,8 +131,10 @@ require('legendary').setup({
             description = 'keymaps for ide',
             icon = '',
             keymaps = {
-                { '<leader>s', function() require("telescope").extensions.switch.switch() end, description = 'toggle other relative files' },
-                { '<F4>',      function() vim.cmd('SymbolsOutline') end,                       description = 'toggle symbol outline' },
+                { '<leader>s',  function() require("telescope").extensions.switch.switch() end, description = 'toggle other relative files' },
+                { '<leader>to', function() require("neotest").output_panel.toggle() end,        description = 'toggle neotest output panel' },
+                { '<leader>tc', function() require("neotest").output_panel.clear() end,         description = 'clear neotest output panel' },
+                { '<F4>',       function() vim.cmd('SymbolsOutline') end,                       description = 'toggle symbol outline' },
                 {
                     '<leader>rr',
                     function()

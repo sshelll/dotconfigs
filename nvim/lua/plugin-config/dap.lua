@@ -19,14 +19,6 @@ dap.adapters.delve_no_optimize = {
     }
 }
 
-
-local codelldb_path = vim.fn.stdpath('data') .. '/mason/bin/codelldb'
-local liblldb_path = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension/lldb/lib/liblldb.dylib'
--- local codelldb_path = os.getenv("HOME") .. '/bin/codelldb-v1.11.1/extension/adapter/codelldb'
--- local liblldb_path = os.getenv("HOME") .. '/bin/codelldb-v1.11.1/extension/lldb/lib/liblldb.dylib'
-local cfg = require('rustaceanvim.config')
-dap.adapters.codelldb = cfg.get_codelldb_adapter(codelldb_path, liblldb_path)
-
 -- dap.adapters.codelldb = {
 --     type = 'server',
 --     port = '${port}',
