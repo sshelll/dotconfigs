@@ -75,7 +75,7 @@ require('dressing').setup({
         -- Options for telescope selector
         -- These are passed into the telescope picker directly. Can be used like:
         -- telescope = require('telescope.themes').get_ivy({}),
-        telescope = require('telescope.themes').get_dropdown({ winblend = 10 }),
+        telescope = require('telescope.themes').get_dropdown({}),
 
         -- Options for fzf selector
         fzf = {
