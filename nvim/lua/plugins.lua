@@ -171,17 +171,21 @@ local pluglist = {
         version = '^5', -- Recommended
         lazy = false,   -- This plugin is already lazy
         config = function()
-            -- well, for now rustaceanvim doesn't support configuring the args for debugging,
-            -- and I haven't figured out how to view the `Vec` in rust with codelldb yet(cuz the mem structure is on the heap),
-            -- but there's is a workaround which is using `RustLsp debug $test --nocapture` to view it in dap ui console
-            -- of course it requires you to add `dbg!` or `println!` in rust codes to output 'em to the console.
-            -- the `--nocapture` is necessary cuz `cargo` will capture all the output until the test is done(to make the output tidy).
             local codelldb_path = vim.fn.stdpath('data') .. '/mason/bin/codelldb'
             local liblldb_path = vim.fn.stdpath('data') .. '/mason/packages/codelldb/extension/lldb/lib/liblldb.dylib'
             local cfg = require('rustaceanvim.config')
             vim.g.rustaceanvim = {
                 dap = {
                     adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path)
+                },
+                server = {
+                    default_settings = {
+                        ['rust-analyzer'] = {
+                            runnables = {
+                                extraTestBinaryArgs = { "--nocapture" }
+                            }
+                        },
+                    },
                 },
             }
         end
@@ -315,10 +319,6 @@ local pluglist = {
         config = function()
             require('plugin-config/gitsigns')
         end
-    },
-    {
-        'nvim-telescope/telescope-ui-select.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' }
     },
     {
         'stevearc/dressing.nvim',
