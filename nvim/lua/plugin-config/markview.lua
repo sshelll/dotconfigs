@@ -140,5 +140,25 @@ require("markview").setup({
                 hl = "DiagnosticWarn"
             }
         },
+    },
+    typst = {
+        code_blocks = {
+            enable = true,
+            style = "language",
+            position = "overlay",
+
+            border_hl = "MarkviewCodeblock",
+            default = {
+                block_hl = "MarkviewCodeblock",
+                pad_hl = "MarkviewCodeblock"
+            },
+
+            min_width = 100,
+            pad_char = " ",
+            pad_amount = 2,
+
+            language_direction = "right",
+            sign = true,
+        }
     }
 });
