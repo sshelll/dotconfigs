@@ -29,9 +29,17 @@ local pluglist = {
         event = "VeryLazy",
         lazy = false,
         version = false,
-        config = function()
-            require('plugin-config/avante')
-        end,
+        opts = {
+            provider = "deepseek",
+            vendors = {
+                deepseek = {
+                    __inherited_from = "openai",
+                    api_key_name = "DEEPSEEK_API_KEY",
+                    endpoint = "https://api.deepseek.com",
+                    model = "deepseek-coder",
+                },
+            },
+        },
         build = "make",
         dependencies = {
             "stevearc/dressing.nvim",
