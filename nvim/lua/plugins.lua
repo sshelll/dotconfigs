@@ -58,13 +58,6 @@ local pluglist = {
     },
     { "tiagovla/scope.nvim",  opts = {} },
     {
-        "sphamba/smear-cursor.nvim",
-        enabled = false,
-        config = function()
-            require("plugin-config/smear-cursor")
-        end
-    },
-    {
         'uga-rosa/ccc.nvim',
         opts = {
             highlighter = {
@@ -78,13 +71,6 @@ local pluglist = {
         opts = {},
     },
     {
-        'norcalli/nvim-colorizer.lua',
-        enabled = false,
-        config = function()
-            require 'colorizer'.setup()
-        end
-    },
-    {
         "folke/lazydev.nvim",
         ft = "lua",
         opts = {
@@ -94,26 +80,6 @@ local pluglist = {
         },
     },
     { "Bilal2453/luvit-meta", lazy = true },
-    {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        enabled = false,
-        dependencies = {
-            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-            { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
-        },
-        build = "make tiktoken",
-        opts = {
-            prompts = {
-                Explain = {
-                    prompt = '/COPILOT_EXPLAIN 解释一下选中的文本 / 代码',
-                },
-                Review = {
-                    prompt = '/COPILOT_REVIEW Review 一下选中的文本 / 代码',
-                    callback = function() end
-                },
-            }
-        },
-    },
     {
         "kevinhwang91/nvim-ufo",
         event = 'VeryLazy',
@@ -159,15 +125,6 @@ local pluglist = {
         end
     },
     {
-        'simrat39/rust-tools.nvim',
-        enabled = false,
-        dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
-        event = 'VeryLazy',
-        config = function()
-            require('plugin-config/rust-tools')
-        end
-    },
-    {
         'mrcjkb/rustaceanvim',
         version = '^5', -- Recommended
         lazy = false,   -- This plugin is already lazy
@@ -196,15 +153,6 @@ local pluglist = {
         event = 'VeryLazy',
         config = function()
             require('plugin-config/yanky')
-        end
-    },
-    {
-        'MeanderingProgrammer/markdown.nvim',
-        enabled = false,
-        main = "render-markdown",
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('plugin-config/markdown')
         end
     },
     {
