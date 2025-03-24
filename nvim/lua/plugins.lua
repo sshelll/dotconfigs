@@ -28,7 +28,7 @@ local pluglist = {
         "yetone/avante.nvim",
         event = "VeryLazy",
         lazy = false,
-        version = false,
+        version = false, -- set this if you want to always pull the latest change
         opts = {
             provider = "deepseek",
             vendors = {
@@ -37,6 +37,7 @@ local pluglist = {
                     api_key_name = "DEEPSEEK_API_KEY",
                     endpoint = "https://api.deepseek.com",
                     model = "deepseek-coder",
+                    max_tokens = 4096,
                 },
             },
         },
