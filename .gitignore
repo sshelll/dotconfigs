@@ -4,4 +4,7 @@
 !nvim/
 !tmux/
 !starship.toml
+!atuin/
+atuin/*
+!atuin/config.toml
 !.gitignore
