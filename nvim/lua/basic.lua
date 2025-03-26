@@ -31,6 +31,8 @@ if vim.g.transparent then
     vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#646984" })
     vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#666D8D" })
     vim.api.nvim_set_hl(0, "CopilotAnnotation", { fg = "#666D8D" })
+    vim.api.nvim_set_hl(0, "AvanteSidebarWinSeparator", { fg = "#576080" })
+    vim.api.nvim_set_hl(0, "AvanteSidebarWinHorizontalSeparator", { fg = "#576080" })
 end
 
 vim.o.mouse = ''
