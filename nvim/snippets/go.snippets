@@ -4,10 +4,10 @@ snippet fmtp "fmt.Println"
 	fmt.Println("${1}")
 
 snippet fmtpf "fmt.Printf"
-	fmt.Printf("${1:format}", ${2})
+	fmt.Printf("${1:format}\n", ${2})
 
 snippet fmtf "fmt.Fprintf"
-	fmt.Fprintf(${1:io.Writer}, "${2:format}", ${3})
+	fmt.Fprintf(${1:io.Writer}, "${2:format}\n", ${3})
 
 snippet fmts "fmt.Sprintf"
 	fmt.Sprintf("${1:format}", ${2})
