@@ -21,12 +21,22 @@ require("mason-lspconfig").setup {
         end,
         ["gopls"] = function()
             lspconfig.gopls.setup {
-                cmd = { "gopls", "serve" },
+                cmd = { "gopls" },
+                capabilities = capabilities,
                 settings = {
                     gopls = {
                         directoryFilters = { "-vendor" },
+                        experimentalPostfixCompletions = true,
+                        analyses = {
+                            unusedparams = true,
+                            shadow = true,
+                        },
+                        staticcheck = true,
                     },
                 },
+                init_options = {
+                    usePlaceholders = true,
+                }
             }
         end,
         ["lua_ls"] = function()
