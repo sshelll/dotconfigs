@@ -515,11 +515,13 @@ local pluglist = {
         end
     },
     {
-        'simrat39/symbols-outline.nvim',
-        event = 'VeryLazy',
-        config = function()
-            require('plugin-config/symbols-outline')
-        end
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        keys = {
+            { "<F4>", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        opts = {}
     },
     {
         'folke/trouble.nvim',
