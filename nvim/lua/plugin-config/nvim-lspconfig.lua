@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.go",
     callback = function()
-        local params = vim.lsp.util.make_range_params()
+        local params = vim.lsp.util.make_range_params(0, "utf-8")
         params.context = { only = { "source.organizeImports" } }
         local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
         for cid, res in pairs(result or {}) do
@@ -121,11 +121,22 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 -- diagnostic symbols
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+local diagnostics = {
+    virtual_text = true, -- Disable builtin virtual text diagnostic
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = ' ',
+            [vim.diagnostic.severity.WARN] = ' ',
+            [vim.diagnostic.severity.HINT] = ' ',
+            [vim.diagnostic.severity.INFO] = ' ',
+        }
+    },
+    virtual_improved = {
+        current_line = 'only',
+    },
+    severity_sort = true -- sometimes we need a Hint instead of an Error
+}
+vim.diagnostic.config(diagnostics)
 
 -- show diagnostic info in float window
 -- vim.o.updatetime = 250
