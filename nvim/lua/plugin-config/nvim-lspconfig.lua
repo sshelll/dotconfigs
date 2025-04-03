@@ -122,7 +122,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 -- diagnostic symbols
 local diagnostics = {
-    virtual_text = true, -- Disable builtin virtual text diagnostic
+    virtual_text = true,
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = ' ',
