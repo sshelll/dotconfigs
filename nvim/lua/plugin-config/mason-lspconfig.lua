@@ -87,6 +87,11 @@ require("mason-lspconfig").setup {
                 single_file_support = true,
             }
         end,
+        ["millet"] = function()
+            lspconfig.millet.setup {
+                cmd = { "millet" },
+            }
+        end,
         ["ts_ls"] = function()
             lspconfig.ts_ls.setup {}
         end,

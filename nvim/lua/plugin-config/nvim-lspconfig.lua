@@ -13,8 +13,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -138,10 +136,9 @@ local diagnostics = {
 }
 vim.diagnostic.config(diagnostics)
 
--- show diagnostic info in float window
--- vim.o.updatetime = 250
--- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
-require 'lspconfig'.millet.setup {
-    cmd = { "millet" },
-}
+-- disable some mappings since nvim v0.11, cuz we've already mapped 'gr' to lsp_references
+-- if we don't disabled these, the resp time of 'gr' will be too slow
+vim.keymap.del('n', 'gri') -- lsp impls
+vim.keymap.del('n', 'gra') -- lsp code actions
+vim.keymap.del('n', 'grr') -- lsp references
+vim.keymap.del('n', 'grn') -- lsp rename
