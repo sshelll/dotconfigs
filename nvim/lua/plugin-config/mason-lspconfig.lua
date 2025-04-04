@@ -3,14 +3,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("mason-lspconfig").setup {
     ensure_installed = {
-        "lua_ls",
-        "gopls",
-        "bashls",
-        "rust_analyzer",
-        "jdtls",
-        "biome",
-        "ts_ls",
-        "tinymist"
+        "lua_ls",                          -- lua
+        "gopls",                           -- go
+        "bashls",                          -- bash
+        "rust_analyzer",                   -- rust
+        "jdtls",                           -- java
+        "biome",                           -- json
+        "taplo",                           -- toml
+        "ts_ls",                           -- typescript
+        "tinymist",                        -- typst
+        "docker_compose_language_service", -- docker-compose
+        "dockerls",                        -- dockerfile
     },
     automatic_installation = false,
     handlers = {
@@ -29,7 +32,7 @@ require("mason-lspconfig").setup {
                         experimentalPostfixCompletions = true,
                         analyses = {
                             unusedparams = true,
-                            shadow = true,
+                            shadow = false,
                         },
                         staticcheck = true,
                     },
@@ -92,14 +95,5 @@ require("mason-lspconfig").setup {
                 cmd = { "millet" },
             }
         end,
-        ["ts_ls"] = function()
-            lspconfig.ts_ls.setup {}
-        end,
-        ["marksman"] = function()
-            lspconfig.marksman.setup {}
-        end,
-        ["gradle_ls"] = function()
-            lspconfig.gradle_ls.setup {}
-        end
     }
 }
