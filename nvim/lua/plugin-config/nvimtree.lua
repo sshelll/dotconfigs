@@ -12,4 +12,9 @@ require("nvim-tree").setup({
             error = "",
         },
     },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+    },
 })
