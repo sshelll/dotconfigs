@@ -457,10 +457,6 @@ local pluglist = {
         end
     },
     {
-        'rhysd/vim-go-impl',
-        event = 'VeryLazy',
-    },
-    {
         'neovim/nvim-lspconfig',
         lazy = false,
         dependencies = {
