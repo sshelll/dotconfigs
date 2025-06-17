@@ -16,6 +16,12 @@ require("mason-lspconfig").setup {
         "dockerls",                        -- dockerfile
     },
     automatic_installation = false,
+    automatic_enable = {
+        exclude = {
+            "rust_analyzer",
+            "ts_ls"
+        }
+    },
     handlers = {
         function(server_name)
             lspconfig[server_name].setup {
@@ -53,20 +59,20 @@ require("mason-lspconfig").setup {
                 },
             }
         end,
-        ["rust_analyzer"] = function()
-            -- lspconfig.rust_analyzer.setup {
-            --     settings = {
-            --         ["rust-analyzer"] = {
-            --             checkOnSave = {
-            --                 command = "clippy",
-            --             },
-            --             cargo = {
-            --                 features = "all",
-            --             },
-            --         },
-            --     },
-            -- }
-        end,
+        -- ["rust_analyzer"] = function()
+        -- lspconfig.rust_analyzer.setup {
+        --     settings = {
+        --         ["rust-analyzer"] = {
+        --             checkOnSave = {
+        --                 command = "clippy",
+        --             },
+        --             cargo = {
+        --                 features = "all",
+        --             },
+        --         },
+        --     },
+        -- }
+        -- end,
         ["jdtls"] = function() end,
         ["sqlls"] = function()
             lspconfig.sqlls.setup {
