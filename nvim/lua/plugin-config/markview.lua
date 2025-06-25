@@ -21,7 +21,7 @@ require("markview").setup({
         MarkviewIcon5 = { fg = "#ba9af6", bg = "none" },
         MarkviewIcon6 = { fg = "#9c7cd7", bg = "none" },
         MarkviewCodeblock = { bg = "none" },
-        MarkviewInlineCode = { bg = "none" },
+        -- MarkviewInlineCode = { fg = "#414868", bg = "none" },
     },
     markdown = {
         enable = true,
