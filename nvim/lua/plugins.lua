@@ -245,6 +245,7 @@ local pluglist = {
     },
     {
         'RRethy/vim-illuminate',
+        enabled = false,
         event = 'VeryLazy',
         config = function()
             require('plugin-config/illuminate')
@@ -437,6 +438,13 @@ local pluglist = {
         event = 'VeryLazy',
         config = function()
             require('plugin-config/nvim-treesitter-text-obj')
+        end
+    },
+    {
+        'nvim-treesitter/nvim-treesitter-refactor',
+        event = 'VeryLazy',
+        config = function ()
+            require('plugin-config/nvim-treesitter-refactor')
         end
     },
     {
