@@ -173,7 +173,6 @@ local pluglist = {
         "OXY2DEV/markview.nvim",
         lazy = false,
         dependencies = {
-            "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons"
         },
         config = function()
@@ -420,6 +419,7 @@ local pluglist = {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        dependencies = { "OXY2DEV/markview.nvim" },
         build = ":TSUpdate",
         config = function()
             require('plugin-config/nvim-treesitter')

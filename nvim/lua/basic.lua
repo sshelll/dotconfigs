@@ -38,6 +38,13 @@ if vim.g.transparent then
     vim.api.nvim_set_hl(0, "MarkviewInlineCode", { bg = "#414868" })
     vim.api.nvim_set_hl(0, "MarkviewCodeInfo", { bg = "#414868" })
     vim.api.nvim_set_hl(0, "MarkviewCode", { bg = "#414868" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon0", { fg = "#555f88" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon1", { fg = "#79a2f6" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon2", { fg = "#dfaf67" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon3", { fg = "#9dce69" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon4", { fg = "#19bc9b" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon5", { fg = "#ba9af6" })
+    vim.api.nvim_set_hl(0, "MarkviewIcon6", { fg = "#9c7cd7" })
 end
 
 vim.o.mouse = ''
