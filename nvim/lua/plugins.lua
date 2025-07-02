@@ -30,13 +30,29 @@ local pluglist = {
         lazy = false,
         version = false, -- set this if you want to always pull the latest change
         opts = {
-            provider = "deepseek",
+            provider = "claude",
             providers = {
                 deepseek = {
                     __inherited_from = "openai",
                     api_key_name = "DEEPSEEK_API_KEY",
                     endpoint = "https://api.deepseek.com",
-                    model = "deepseek-coder",
+                    model = "deepseek-chat",
+                    max_tokens = 8192,
+                },
+                claude = {
+                    -- endpoint = "https://api.anthropic.com",
+                    endpoint = "https://api.gptsapi.net",
+                    model = "claude-sonnet-4-20250514",
+                    timeout = 10000, -- Timeout in milliseconds
+                    extra_request_body = {
+                        temperature = 0.3,
+                        max_tokens = 8192,
+                    },
+                },
+                openai = {
+                    endpoint = "https://api.gptsapi.net/v1",
+                    model = "gpt-4o",
+                    timeout = 10000, -- Timeout in milliseconds
                     max_tokens = 8192,
                 },
             },
@@ -443,7 +459,7 @@ local pluglist = {
     {
         'nvim-treesitter/nvim-treesitter-refactor',
         event = 'VeryLazy',
-        config = function ()
+        config = function()
             require('plugin-config/nvim-treesitter-refactor')
         end
     },
