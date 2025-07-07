@@ -40,7 +40,6 @@ local pluglist = {
                     max_tokens = 8192,
                 },
                 claude = {
-                    -- endpoint = "https://api.anthropic.com",
                     endpoint = "https://api.gptsapi.net",
                     model = "claude-sonnet-4-20250514",
                     timeout = 10000, -- Timeout in milliseconds
@@ -51,7 +50,8 @@ local pluglist = {
                 },
                 openai = {
                     endpoint = "https://api.gptsapi.net/v1",
-                    model = "gpt-4o",
+                    -- model = "gpt-4o",
+                    model = "o4-mini",
                     timeout = 10000, -- Timeout in milliseconds
                     max_tokens = 8192,
                 },
@@ -59,7 +59,8 @@ local pluglist = {
         },
         build = "make",
         dependencies = {
-            "stevearc/dressing.nvim",
+            -- "stevearc/dressing.nvim",
+            "folke/snacks.nvim",
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
             "hrsh7th/nvim-cmp",
@@ -187,7 +188,7 @@ local pluglist = {
     },
     {
         "OXY2DEV/markview.nvim",
-        lazy = false,
+        lazy = true,
         dependencies = {
             "nvim-tree/nvim-web-devicons"
         },
@@ -281,10 +282,37 @@ local pluglist = {
     },
     {
         'stevearc/dressing.nvim',
+        enabled = false,
         dependencies = { 'nvim-telescope/telescope.nvim' },
         config = function()
             require('plugin-config/dressing')
         end
+    },
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            bigfile = { enabled = true },
+            dashboard = { enabled = false },
+            explorer = { enabled = true },
+            indent = { enabled = true },
+            input = { enabled = true },
+            picker = { enabled = true },
+            notifier = { enabled = true },
+            quickfile = { enabled = true },
+            scope = { enabled = true },
+            scroll = { enabled = true },
+            statuscolumn = { enabled = true },
+            words = { enabled = true },
+            styles = {
+                input = {
+                    relative = "cursor",
+                    row = -3,
+                    col = 0,
+                },
+            },
+        },
     },
     {
         'mrjones2014/legendary.nvim',
@@ -415,6 +443,7 @@ local pluglist = {
     },
     {
         'karb94/neoscroll.nvim',
+        enabled = false,
         event = 'VeryLazy',
         config = function()
             require('plugin-config/neoscroll')

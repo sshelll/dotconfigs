@@ -8,8 +8,8 @@ require('legendary').setup({
             description = 'ai keymaps',
             icon = 'function() ',
             keymaps = {
-                { '<leader>ai', function() vim.cmd('AvanteToggle') end,      description = 'open avante window',        mode = { 'n' } },
-                { '<leader>ar', function() vim.cmd('CopilotChatReview') end, description = 'review codes with copilot', mode = { 'v' } },
+                { '<leader>ai', function() vim.cmd('AvanteToggle') end, description = 'toggle avante window', mode = { 'n' } },
+                { '<leader>am', function() vim.cmd('AvanteModels') end, description = 'change avante models', mode = { 'n' } },
             }
         },
         {
