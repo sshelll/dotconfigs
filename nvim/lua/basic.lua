@@ -28,6 +28,8 @@ if vim.g.transparent then
     vim.api.nvim_set_hl(0, "BufferCurrentSign", { fg = "#29a4bd" })
     vim.api.nvim_set_hl(0, "BufferInactive", { fg = "#636a8d" })
     vim.api.nvim_set_hl(0, "BufferInactiveSign", { fg = "#474C65" })
+    vim.api.nvim_set_hl(0, "FloatTitle", { fg = "#29a4bd" })
+    vim.api.nvim_set_hl(0, "FloatFooter", { fg = "#29a4bd" })
     vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = "#DE4949" })
     vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = "#D78D44" })
     vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#646984" })

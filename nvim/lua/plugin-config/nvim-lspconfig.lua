@@ -30,35 +30,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, opts)
         vim.keymap.set('n', '<leader>f', function()
-            local fileType = vim.bo.filetype
-            local file = vim.fn.expand('%:p')
-            if fileType == 'sh' then
-                vim.cmd("!shfmt -l -w " .. file)
-                vim.cmd("edit")
-                return
-            elseif fileType == 'json' then
-                vim.cmd("!biome format --json-formatter-indent-style=space --write " .. file)
-                return
-            elseif fileType == 'yaml' then
-                vim.cmd("!prettier --write " .. file)
-                return
-            elseif fileType == 'markdown' then
-                vim.cmd("!prettier --write " .. file)
-                return
-            elseif fileType == 'sql' then
-                vim.cmd("!sql-formatter --fix " .. file)
-                return
-            elseif fileType == 'python' then
-                vim.cmd("!black " .. file)
-                return
-            elseif fileType == 'java' then
-                vim.cmd("!google-java-format -r " .. file)
-                return
-            elseif fileType == 'proto' then
-                vim.cmd("!buf format -w " .. file)
-                return
-            end
-            vim.lsp.buf.format { async = true }
+            -- vim.lsp.buf.format { async = true }
+            require('conform').format { async = true }
         end, opts)
     end,
 })
@@ -82,6 +55,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
 })
 
+-- Auto fmt
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function(args)
+        require("conform").format({ bufnr = args.buf })
+    end,
+})
+
 -- Java Auto-Import
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --     pattern = "*.java",
@@ -89,34 +70,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 --         require 'jdtls'.organize_imports()
 --     end
 -- })
-
--- Java auto-formatting
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.java",
-    callback = function()
-        local file = vim.fn.expand('%:p')
-        vim.cmd("silent !google-java-format -r " .. file)
-        vim.cmd("edit")
-    end
-})
-
--- Rust auto-formatting
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.rs",
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end
-})
-
--- Bash auto-formatting
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.sh",
-    callback = function()
-        local file = vim.fn.expand('%:p')
-        vim.cmd("silent !shfmt -l -w " .. file)
-        vim.cmd("edit")
-    end
-})
 
 -- diagnostic symbols
 local diagnostics = {

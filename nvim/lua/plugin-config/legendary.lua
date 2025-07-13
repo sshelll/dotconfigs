@@ -50,7 +50,8 @@ require('legendary').setup({
             description = 'keymaps for golang',
             icon = '',
             keymaps = {
-                { '<F2>', function() require('notify').dismiss({ pending = false, silent = false }) end, description = 'clear notifications', },
+                -- { '<F2>', function() require('notify').dismiss({ pending = false, silent = false }) end, description = 'clear notifications', },
+                { '<F2>', function() require('snacks').notifier.hide() end, description = 'clear notifications', },
                 {
                     '<F5>',
                     function()
