@@ -1,6 +1,13 @@
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+lspconfig.move_analyzer.setup({
+	cmd = { "move-analyzer" },
+	filetypes = { "move" },
+	root_dir = lspconfig.util.root_pattern("Move.toml", ".git"),
+	capabilities = capabilities,
+})
+
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls", -- lua
@@ -14,7 +21,6 @@ require("mason-lspconfig").setup({
 		"tinymist", -- typst
 		"docker_compose_language_service", -- docker-compose
 		"dockerls", -- dockerfile
-		"move_analyzer", -- move
 	},
 	automatic_installation = false,
 	automatic_enable = {
@@ -57,28 +63,6 @@ require("mason-lspconfig").setup({
 							globals = { "vim" },
 						},
 					},
-				},
-			})
-		end,
-		-- ["rust_analyzer"] = function()
-		-- lspconfig.rust_analyzer.setup {
-		--     settings = {
-		--         ["rust-analyzer"] = {
-		--             checkOnSave = {
-		--                 command = "clippy",
-		--             },
-		--             cargo = {
-		--                 features = "all",
-		--             },
-		--         },
-		--     },
-		-- }
-		-- end,
-		["move_analyzer"] = function()
-			lspconfig.move_analyzer.setup({
-				settings = {
-					filetypes = { "move" },
-					root_dir = require("lspconfig.util").root_pattern("Move.toml", ".git"),
 				},
 			})
 		end,

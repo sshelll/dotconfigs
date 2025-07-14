@@ -35,7 +35,8 @@ local pluglist = {
 		},
 	},
 	{
-		"0xmovses/move.vim",
+		"yanganto/move.vim",
+		branch = "sui-move",
 	},
 	{
 		"nvim-neotest/neotest",
