@@ -15,6 +15,7 @@ local pluglist = {
 				rust = { "rustfmt" },
 				proto = { "buf" },
 				move = { "prettier-move" },
+				toml = { "taplo" },
 			},
 			formatters = {
 				["prettier-move"] = {
