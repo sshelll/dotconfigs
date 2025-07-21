@@ -100,3 +100,4 @@ vim.keymap.del("n", "gri") -- lsp impls
 vim.keymap.del("n", "gra") -- lsp code actions
 vim.keymap.del("n", "grr") -- lsp references
 vim.keymap.del("n", "grn") -- lsp rename
+vim.keymap.del("n", "grt") -- lsp rename
