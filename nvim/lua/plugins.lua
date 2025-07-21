@@ -1,5 +1,8 @@
 local pluglist = {
 	{
+		"tpope/vim-fugitive",
+	},
+	{
 		"stevearc/conform.nvim",
 		opts = {
 			formatters_by_ft = {
@@ -330,7 +333,7 @@ local pluglist = {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "VeryLazy",
+		lazy = false,
 		config = function()
 			require("plugin-config/gitsigns")
 		end,
