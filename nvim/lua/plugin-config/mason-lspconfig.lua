@@ -2,7 +2,7 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig.move_analyzer.setup({
-	cmd = { os.getenv("HOME") .. "/.sui/bin/move-analyzer" },
+	cmd = { os.getenv("HOME") .. "/.cargo/bin/move-analyzer" },
 	filetypes = { "move" },
 	root_dir = lspconfig.util.root_pattern(".git"),
 	capabilities = capabilities,
