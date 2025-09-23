@@ -1,12 +1,17 @@
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.move_analyzer.setup({
+vim.lsp.config("move_analyzer", {
 	cmd = { os.getenv("HOME") .. "/.cargo/bin/move-analyzer" },
 	filetypes = { "move" },
-	root_dir = lspconfig.util.root_pattern(".git"),
+	root_makers = { "Move.toml", ".git" },
+	-- root_dir = lspconfig.util.root_pattern(".git"),
+	-- root_dir = function(fname)
+	-- 	local move_package_dir = lspconfig.util.root_pattern("Move.toml")(fname)
+	-- 	return move_package_dir
+	-- end,
 	capabilities = capabilities,
 })
+vim.lsp.enable("move_analyzer")
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -31,12 +36,12 @@ require("mason-lspconfig").setup({
 	},
 	handlers = {
 		function(server_name)
-			lspconfig[server_name].setup({
+			vim.lsp.config(server_name, {
 				capabilities = capabilities,
 			})
 		end,
 		["gopls"] = function()
-			lspconfig.gopls.setup({
+			vim.lsp.config.gopls.setup({
 				cmd = { "gopls" },
 				capabilities = capabilities,
 				settings = {
@@ -56,7 +61,7 @@ require("mason-lspconfig").setup({
 			})
 		end,
 		["lua_ls"] = function()
-			lspconfig.lua_ls.setup({
+			vim.lsp.config.lua_ls.setup({
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -68,30 +73,51 @@ require("mason-lspconfig").setup({
 		end,
 		["jdtls"] = function() end,
 		["sqlls"] = function()
-			lspconfig.sqlls.setup({
+			vim.lsp.config.sqlls.setup({
 				cmd = { "sql-language-server", "up", "--method", "stdio" },
 				filetypes = { "sql", "mysql" },
-				root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+				root_dir = vim.lsp.config.util.root_pattern(".git", vim.fn.getcwd()),
 			})
 		end,
 		["sqls"] = function()
-			lspconfig.sqls.setup({
+			vim.lsp.config.sqls.setup({
 				cmd = { "sqls", "-config", "~/.config/sqls/config.yml" },
 				filetypes = { "sql", "mysql" },
-				root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+				root_dir = vim.lsp.config.util.root_pattern(".git", vim.fn.getcwd()),
 			})
 		end,
 		["biome"] = function()
-			lspconfig.biome.setup({
+			vim.lsp.config.biome.setup({
 				cmd = { "biome", "lsp-proxy" },
 				filetypes = { "json", "jsonc" },
-				root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+				root_dir = vim.lsp.config.util.root_pattern(".git", vim.fn.getcwd()),
 				single_file_support = true,
 			})
 		end,
 		["millet"] = function()
-			lspconfig.millet.setup({
+			vim.lsp.config.millet.setup({
 				cmd = { "millet" },
+			})
+		end,
+		["vscode-solidity-server"] = function()
+			vim.lsp.config.solidity.setup({
+				cmd = { "vscode-solidity-server", "--stdio" },
+				filetypes = { "solidity" },
+				root_makers = {
+					"hardhat.config.js",
+					"hardhat.config.ts",
+					"foundry.toml",
+					"remappings.txt",
+					"truffle.js",
+					"truffle-config.js",
+					"ape-config.yaml",
+					".git",
+					"package.json",
+				},
+				-- root_dir = function(startpath)
+				-- 	return vim.fs.dirname(vim.fs.find(".git", { path = startpath, upward = true })[1])
+				-- end,
+				single_file_support = true,
 			})
 		end,
 	},
