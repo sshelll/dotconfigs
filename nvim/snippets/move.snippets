@@ -1,0 +1,33 @@
+extends all
+
+snippet tmod "test mod"
+	#[test_only]
+	module ${0} {
+		use sui::test_scenario;
+
+		#[test]
+		fun test_${1}() {
+			let sender_addr = @0xabc;
+			let mut scenario = test_scenario::begin(sender_addr);
+
+			// TODO: finish
+			${2}
+
+			test_scenario::end(scenario);
+		}
+	}
+
+snippet tfn "test fun"
+	#[test]
+	fun test_${0}() {
+		let sender_addr = @0xabc;
+		let mut scenario = test_scenario::begin(sender_addr);
+
+		// TODO: finish
+		${2}
+
+		test_scenario::end(scenario);
+	}
+
+snippet tonly "#[test_only]"
+	#[test_only]
