@@ -99,26 +99,28 @@ require("mason-lspconfig").setup({
 				cmd = { "millet" },
 			})
 		end,
-		["vscode-solidity-server"] = function()
-			vim.lsp.config.solidity.setup({
-				cmd = { "vscode-solidity-server", "--stdio" },
+		["solc"] = function()
+			vim.lsp.config.solc.setup({
+				cmd = { "solc", "--lsp" },
 				filetypes = { "solidity" },
-				root_makers = {
-					"hardhat.config.js",
-					"hardhat.config.ts",
-					"foundry.toml",
-					"remappings.txt",
-					"truffle.js",
-					"truffle-config.js",
-					"ape-config.yaml",
-					".git",
-					"package.json",
-				},
-				-- root_dir = function(startpath)
-				-- 	return vim.fs.dirname(vim.fs.find(".git", { path = startpath, upward = true })[1])
-				-- end,
+				root_dir = function(bufnr, on_dir)
+					local fname = vim.api.nvim_buf_get_name(bufnr)
+					on_dir(require("lspconfig.util").root_pattern("hardhat.config.*", ".git")(fname))
+				end,
+			})
+		end,
+		["solidity_ls_nomicfoundation"] = function()
+			vim.lsp.config.solidity.setup({
+				cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+				filetypes = { "solidity" },
+				root_dir = function(startpath)
+					return vim.fs.dirname(vim.fs.find(".git", { path = startpath, upward = true })[1])
+				end,
 				single_file_support = true,
 			})
+		end,
+		["vscode-solidity-server"] = function()
+			vim.lsp.config.solidity.setup({})
 		end,
 	},
 })
