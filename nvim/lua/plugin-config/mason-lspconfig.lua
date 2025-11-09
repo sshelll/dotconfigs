@@ -12,6 +12,8 @@ vim.lsp.config("move_analyzer", {
 	capabilities = capabilities,
 })
 vim.lsp.enable("move_analyzer")
+-- vim.lsp.enable("solidity_ls_nomicfoundation")
+vim.lsp.enable("solidity_ls")
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -22,7 +24,6 @@ require("mason-lspconfig").setup({
 		"jdtls", -- java
 		"biome", -- json
 		"taplo", -- toml
-		"ts_ls", -- typescript
 		"tinymist", -- typst
 		"docker_compose_language_service", -- docker-compose
 		"dockerls", -- dockerfile
