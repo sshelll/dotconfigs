@@ -5,6 +5,7 @@
 !tmux/
 !starship.toml
 !atuin/
+!neovide/
 atuin/*
 !atuin/config.toml
 !.gitignore

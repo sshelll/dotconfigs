@@ -2,7 +2,7 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_vfx_mode = "railgun"
 	vim.g.neovide_hide_mouse_when_typing = true
 	-- vim.o.guifont = "MesloLGS Nerd Font:h12:#h-full"
-	vim.o.guifont = "JetBrainsMono Nerd Font:h12:#h-full"
+	-- vim.o.guifont = "JetBrainsMono Nerd Font:h11.5:#h-normal:#e-subpixelantialias"
 	vim.g.neovide_fullscreen = false
 	vim.g.neovide_opacity = 0.8
 	vim.g.neovide_normal_opacity = 0.8
