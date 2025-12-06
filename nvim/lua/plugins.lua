@@ -48,6 +48,7 @@ local pluglist = {
 				proto = { "buf" },
 				move = { "prettier-move" },
 				toml = { "taplo" },
+				swift = { "swift" },
 			},
 			formatters = {
 				["prettier-move"] = {
@@ -113,7 +114,7 @@ local pluglist = {
 				},
 				claude = {
 					endpoint = "https://api.gptsapi.net",
-					model = "claude-sonnet-4-20250514",
+					model = "claude-sonnet-4-5-20250929",
 					timeout = 10000, -- Timeout in milliseconds
 					extra_request_body = {
 						temperature = 0.3,
@@ -381,6 +382,7 @@ local pluglist = {
 		priority = 1000,
 		lazy = false,
 		opts = {
+			dim = { enabled = true },
 			bigfile = { enabled = true },
 			dashboard = { enabled = false },
 			explorer = { enabled = true },
@@ -392,7 +394,7 @@ local pluglist = {
 			scope = { enabled = true },
 			scroll = { enabled = true },
 			statuscolumn = { enabled = true },
-			words = { enabled = true },
+			words = { enabled = false },
 			styles = {
 				input = {
 					relative = "cursor",
@@ -497,7 +499,8 @@ local pluglist = {
 	},
 	{
 		"sindrets/diffview.nvim",
-		event = "VeryLazy",
+		lazy = false,
+		opts = {},
 	},
 	{
 		"romgrk/barbar.nvim",
