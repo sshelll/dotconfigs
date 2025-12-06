@@ -14,6 +14,7 @@ vim.lsp.config("move_analyzer", {
 vim.lsp.enable("move_analyzer")
 -- vim.lsp.enable("solidity_ls_nomicfoundation")
 vim.lsp.enable("solidity_ls")
+vim.lsp.enable("sourcekit")
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -21,7 +22,7 @@ require("mason-lspconfig").setup({
 		"gopls", -- go
 		"bashls", -- bash
 		"rust_analyzer", -- rust
-		"jdtls", -- java
+		-- "jdtls", -- java
 		"biome", -- json
 		"taplo", -- toml
 		"tinymist", -- typst
