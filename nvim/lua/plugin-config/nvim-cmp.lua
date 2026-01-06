@@ -45,16 +45,13 @@ cmp.setup({
 		entries = "custom", -- can be "custom", "wildmenu" or "native"
 	},
 	window = {
-		completion = cmp.config.window.bordered({
-			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			col_offset = -3,
+		completion = {
+			border = "rounded",
 			side_padding = 0,
-		}),
-		documentation = cmp.config.window.bordered({
-			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			col_offset = 0,
-			side_padding = 0,
-		}),
+		},
+		documentation = {
+			border = "rounded",
+		},
 	},
 	formatting = {
 		format = function(entry, vim_item)
