@@ -101,38 +101,26 @@ local pluglist = {
 	},
 	{
 		"yetone/avante.nvim",
+		build = vim.fn.has("win32") ~= 0
+				and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+			or "make",
 		event = "VeryLazy",
-		lazy = false,
-		version = false, -- set this if you want to always pull the latest change
+		version = false, -- Never set this value to "*"! Never!
+		commit = "a27b821cc1f9fec70d7b7dc4a42c6dbd76266997",
 		opts = {
 			provider = "claude",
 			providers = {
-				deepseek = {
-					__inherited_from = "openai",
-					api_key_name = "DEEPSEEK_API_KEY",
-					endpoint = "https://api.deepseek.com",
-					model = "deepseek-chat",
-					max_tokens = 8192,
-				},
 				claude = {
 					endpoint = "https://api.gptsapi.net",
 					model = "claude-sonnet-4-5-20250929",
-					timeout = 10000, -- Timeout in milliseconds
+					timeout = 30000, -- Timeout in milliseconds
 					extra_request_body = {
-						temperature = 0.3,
-						max_tokens = 8192,
+						temperature = 0.75,
+						max_tokens = 20480,
 					},
-				},
-				openai = {
-					endpoint = "https://api.gptsapi.net/v1",
-					-- model = "gpt-4o",
-					model = "o4-mini",
-					timeout = 10000, -- Timeout in milliseconds
-					max_tokens = 8192,
 				},
 			},
 		},
-		build = "make",
 		dependencies = {
 			-- "stevearc/dressing.nvim",
 			"folke/snacks.nvim",

@@ -7,21 +7,25 @@ size = 11.5
 [font.bold]
 # family = "JetBrainsMono Nerd Font"
 family = "Maple Mono Normal NF CN"
+# family = "Maple Mono NF CN"
 style = "Bold"
 
 [font.bold_italic]
 # family = "JetBrainsMono Nerd Font"
 family = "Maple Mono Normal NF CN"
+# family = "Maple Mono NF CN"
 style = "Bold Italic"
 
 [font.italic]
 # family = "JetBrainsMono Nerd Font"
 family = "Maple Mono Normal NF CN"
+# family = "Maple Mono NF CN"
 style = "Italic"
 
 [font.normal]
 # family = "JetBrainsMono Nerd Font"
 family = "Maple Mono Normal NF CN"
+# family = "Maple Mono NF CN"
 style = "Regular"
 
 [[keyboard.bindings]]
