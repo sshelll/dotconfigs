@@ -106,21 +106,10 @@ local pluglist = {
 			or "make",
 		event = "VeryLazy",
 		version = false, -- Never set this value to "*"! Never!
-		commit = "a27b821cc1f9fec70d7b7dc4a42c6dbd76266997",
-		opts = {
-			provider = "claude",
-			providers = {
-				claude = {
-					endpoint = "https://api.gptsapi.net",
-					model = "claude-sonnet-4-5-20250929",
-					timeout = 30000, -- Timeout in milliseconds
-					extra_request_body = {
-						temperature = 0.75,
-						max_tokens = 20480,
-					},
-				},
-			},
-		},
+		-- commit = "a27b821cc1f9fec70d7b7dc4a42c6dbd76266997",
+		config = function()
+			require("plugin-config/avante")
+		end,
 		dependencies = {
 			-- "stevearc/dressing.nvim",
 			"folke/snacks.nvim",
@@ -264,7 +253,8 @@ local pluglist = {
 		"Wansmer/treesj",
 		dependencies = { "nvim-treesitter" },
 		config = function()
-			require("treesj").setup({ --[[ your config ]]
+			require("treesj").setup({
+				max_join_length = 1200,
 			})
 		end,
 	},
