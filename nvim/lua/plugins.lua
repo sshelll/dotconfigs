@@ -659,6 +659,7 @@ local pluglist = {
 	},
 	{
 		"folke/trouble.nvim",
+		enabled = false, -- use snacks instead
 		opts = {},
 		keys = {
 			{

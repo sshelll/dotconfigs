@@ -447,6 +447,13 @@ require("legendary").setup({
 					end,
 					description = "generate test for the current function",
 				},
+				{
+					"<leader>dd",
+					function()
+						Snacks.picker.diagnostics()
+					end,
+					description = "show diagnostics with snacks picker",
+				},
 			},
 		},
 	},
@@ -501,27 +508,6 @@ require("legendary").setup({
 				},
 			},
 		},
-		{
-			itemgroup = "rust",
-			description = "commands for rust",
-			icon = "",
-			commands = {
-				{
-					":RustBuild",
-					function()
-						vim.cmd("!cargo build")
-					end,
-					description = "build rust project",
-				},
-				{
-					":RustBuildRelease",
-					function()
-						vim.cmd("!cargo build --release")
-					end,
-					description = "build rust project with release flag",
-				},
-			},
-		},
 	},
 	funcs = {
 		{
@@ -533,42 +519,6 @@ require("legendary").setup({
 					description = "go impl with ui",
 					function()
 						require("util/golang").ui_impl()
-					end,
-				},
-			},
-		},
-		{
-			itemgroup = "time",
-			description = "functions for time",
-			icon = "",
-			funcs = {
-				{
-					description = "milli timestamp to date",
-					function()
-						local c = require("util/common")
-						local input = c.inputOrDefault(vim.fn.strftime("%s"), "timestamp: ")
-						local timestamp = tonumber(input)
-						local date = os.date("%Y-%m-%d %H:%M:%S", timestamp / 1000)
-						vim.api.nvim_out_write(date .. "\n")
-					end,
-				},
-				{
-					description = "date to milli timestamp",
-					function()
-						local c = require("util/common")
-						local fmt = "%Y-%m-%d %H:%M:%S"
-						local input =
-							c.inputOrDefault(vim.fn.strftime(fmt), string.format("date(%s, default now): ", fmt))
-						local date = input
-						local timestamp = os.time({
-							year = date:sub(1, 4),
-							month = date:sub(6, 7),
-							day = date:sub(9, 10),
-							hour = date:sub(12, 13),
-							min = date:sub(15, 16),
-							sec = date:sub(18, 19),
-						})
-						vim.api.nvim_out_write(timestamp * 1000 .. "\n")
 					end,
 				},
 			},
