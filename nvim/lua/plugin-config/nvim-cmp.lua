@@ -11,34 +11,6 @@ local feedkey = function(key, mode)
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-local kind_icons = {
-	Text = "",
-	Method = "󰆧",
-	Function = "󰊕",
-	Constructor = "",
-	Field = "󰇽",
-	Variable = "󰂡",
-	Class = "󰠱",
-	Interface = "",
-	Module = "",
-	Property = "󰜢",
-	Unit = "",
-	Value = "󰎠",
-	Enum = "",
-	Keyword = "󰌋",
-	Snippet = "",
-	Color = "󰏘",
-	File = "󰈙",
-	Reference = "",
-	Folder = "󰉋",
-	EnumMember = "",
-	Constant = "󰏿",
-	Struct = "",
-	Event = "",
-	Operator = "󰆕",
-	TypeParameter = "󰅲",
-}
-
 -- Setup nvim-cmp
 cmp.setup({
 	view = {
@@ -54,22 +26,18 @@ cmp.setup({
 		},
 	},
 	formatting = {
-		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-			-- Source
-			vim_item.menu = ({
-				buffer = "[Buffer]",
-				nvim_lsp = "[LSP]",
-				luasnip = "[LuaSnip]",
-				vsnip = "[VSnip]",
-				nvim_lua = "[Lua]",
-				latex_symbols = "[LaTeX]",
-			})[entry.source.name]
-			return vim_item
-		end,
-		expandable_indicator = true,
-		fields = { "abbr", "kind", "menu" },
+		fields = { "abbr", "icon", "kind", "menu" },
+		format = require("lspkind").cmp_format({
+			maxwidth = {
+				menu = 50,
+				abbr = 50,
+			},
+			ellipsis_char = "...",
+			show_labelDetails = true,
+			before = function(entry, vim_item)
+				return vim_item
+			end,
+		}),
 	},
 	snippet = {
 		expand = function(args)
@@ -105,12 +73,13 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp", priority = 1000 },
-		{ name = "vsnip", priority = 900 },
-		{ name = "cmp-dbee", priority = 800 },
-		{ name = "orgmode", priority = 800 },
-		{ name = "path", priority = 800 },
-		{ name = "buffer", priority = 500 },
+		{ name = "nvim_lsp", priority = 1000, group_index = 1 },
+		{ name = "vsnip", priority = 999, group_index = 1 },
+		{ name = "copilot", priority = 998, group_index = 1 },
+		{ name = "path", priority = 997, group_index = 1 },
+		{ name = "buffer", priority = 500, group_index = 1 },
+		{ name = "cmp-dbee", priority = 800, group_index = 2 },
+		{ name = "orgmode", priority = 800, group_index = 2 },
 		{
 			name = "lazydev",
 			group_index = 0, -- set group index to 0 to skip loading LuaLS completions

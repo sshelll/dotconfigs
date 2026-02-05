@@ -100,6 +100,12 @@ local pluglist = {
 		end,
 	},
 	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
+	{
 		"yetone/avante.nvim",
 		build = vim.fn.has("win32") ~= 0
 				and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
@@ -634,6 +640,12 @@ local pluglist = {
 		},
 		config = function()
 			require("plugin-config/nvim-cmp")
+		end,
+	},
+	{
+		"onsails/lspkind.nvim",
+		config = function()
+			require("plugin-config/lspkind")
 		end,
 	},
 	{

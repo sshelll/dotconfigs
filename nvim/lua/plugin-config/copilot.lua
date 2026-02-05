@@ -1,11 +1,14 @@
 require("copilot").setup({
+	panel = {
+		enabled = false,
+	},
 	suggestion = {
-		enabled = true,
+		enabled = false,
 		auto_trigger = false,
 		hide_during_completion = true,
 		debounce = 75,
 		keymap = {
-			accept = "<C-c>",
+			accept = "¬", -- <M-l> on macOS
 			accept_word = false,
 			accept_line = false,
 			next = "∆", -- <M-j> on macOS
