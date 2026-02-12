@@ -394,6 +394,7 @@ local pluglist = {
 		"mrjones2014/legendary.nvim",
 		lazy = false,
 		priority = 1000,
+		dependencies = { "nvim-tree/nvim-tree.lua" },
 		config = function()
 			require("plugin-config/legendary")
 		end,
