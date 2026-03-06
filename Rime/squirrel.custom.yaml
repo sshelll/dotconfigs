@@ -1,0 +1,48 @@
+# 適用於【鼠鬚管】0.9.13+
+# 位置：~/Library/Rime/squirrel.custom.yaml
+# 用法：想要哪項生效，就刪去該行行首的#字符，但注意保留用於縮進的空格
+
+patch:
+  us_keyboard_layout: true # 鍵盤選項：應用美式鍵盤佈局
+  # show_notifications_when: growl_is_running # 狀態通知，默認裝有Growl時顯示，也可設爲全開（always）全關（never）
+
+  style:
+    candidate_format: "[label].[candidate] [comment]"
+    # font_face: "苹方-繁,苹方-简"
+    font_face: "Ark Pixel 12px Prop zh_cn"
+    font_point: 14 # 字號
+    label_font_face: "DepartureMono Nerd Font"
+    label_font_point: 14 # 標籤字號
+    candidate_list_layout: stacked # 候选词语方向 linear or stacked
+    text_orientation: horizontal # 文本方向
+    inline_preedit: true # 內嵌編碼行
+    inline_candidate: false # 內嵌候選詞
+    show_paging: false # 顯示分頁
+    color_scheme: google # 選擇配色方案
+    color_scheme_dark: dark_temple_v2 # 選擇配色方案
+    corner_radius: 10 # 窗口圓角半徑
+    border_height: -3
+    border_width: 0
+    hilited_corner_radius: 5
+    line_spacing: 4
+    base_offset: 6
+    spacing: 0
+    shadow_size: 10
+    alpha: 0.95
+    memorize_size: true
+    mutual_exclusive: false # 控制半透明顏色是否互相疊加, false 表示疊加
+
+  preset_color_schemes/+:
+    dark_temple_v2:
+      author: "kayce <shaojiale.gitignore@icloud.com>, based on dark_temple"
+      back_color: 0x1A000000
+      border_color: 0x1010a0
+      candidate_text_color: 0xd8e3e6
+      comment_text_color: 0x606cff
+      hilited_back_color: 0x222222
+      hilited_candidate_back_color: 0x11FFFFFF
+      hilited_candidate_text_color: 0x98f6ad
+      hilited_text_color: 0xffcf9a
+      name: "暗堂 V2／Dark Temple V2"
+      text_color: 0x92f6da
+      translucency: true

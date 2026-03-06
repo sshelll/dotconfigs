@@ -8,6 +8,7 @@
 !starship.toml
 !atuin/
 !neovide/
+!Rime/
 atuin/*
 !atuin/config.toml
 !.gitignore

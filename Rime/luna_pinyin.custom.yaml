@@ -1,0 +1,26 @@
+patch:
+  switches:
+    - name: ascii_mode
+      reset: 0 # 這樣就不會在切換到本方案後仍然保持在英文狀態。
+      states: [中文, 英文]
+    - name: full_shape # 这里影响按下回车键的时候回显的英文字母的全半角
+      reset: 0
+      states: [半角, 全角]
+    - name: simplification
+      reset: 1
+      states: [繁體, 简体]
+    - name: emoji_suggestion
+      reset: 1
+      states: ["❌️", "✅️"]
+
+  "engine/filters/@before 0": simplifier@emoji_suggestion
+
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: none
+    inherit_comment: false
+
+  "key_binder/bindings":
+    - { when: paging, accept: bracketleft, send: Page_Up }
+    - { when: has_menu, accept: bracketright, send: Page_Down }

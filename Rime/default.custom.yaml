@@ -1,0 +1,20 @@
+patch:
+  "switcher/hotkeys": # 這個列表裏每項定義一個快捷鍵，使哪個都中
+    - "Control+grave" # 你看寫法並不是 Ctrl+` 而是與 IBus 一致的表示法
+
+  "menu/page_size": 6
+
+  key_binder/bindings/=:
+    - { accept: "Control+k", send: Page_Up, when: composing }
+    - { accept: "Control+j", send: Page_Down, when: composing }
+
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Shift_L: noop
+    Shift_R: noop
+    Control_L: noop
+    Control_R: noop
+
+  schema_list:
+    - schema: luna_pinyin # 朙月拼音
