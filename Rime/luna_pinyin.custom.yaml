@@ -13,6 +13,11 @@ patch:
       reset: 1
       states: ["❌️", "✅️"]
 
+  punctuator/full_shape:
+    "/": "、"
+  punctuator/half_shape:
+    "/": "、"
+
   "engine/filters/@before 0": simplifier@emoji_suggestion
 
   emoji_suggestion:

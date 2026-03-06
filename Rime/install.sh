@@ -11,6 +11,12 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+if [ ! -d "custom_phrase.txt" ]; then
+    echo -e "Creating 'custom_phrase.txt'\n"
+    touch "$SCRIPT_DIR/custom_phrase.txt"
+    echo "Bonjour	hello" >"$SCRIPT_DIR/custom_phrase.txt"
+fi
+
 # link all the files and dirs to the target with `ln -s $PWD/filename $TARGET/filename`
 for item in "$SCRIPT_DIR"/*; do
     filename="$(basename "$item")"
@@ -28,7 +34,7 @@ for item in "$SCRIPT_DIR"/*; do
     fi
 
     ln -s "$item" "$dest"
-    echo "Linked $filename -> $dest"
+    echo -e "Linked $filename -> $dest\n"
 done
 
 echo "Done!"
