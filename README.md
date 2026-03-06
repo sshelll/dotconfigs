@@ -1,6 +1,10 @@
 # Dotconfigs
-> ~/.config on MacOS  
-> Including: alacritty, lazygit, nvim, tmux, starship
+> `XDG_CONFIG_HOME` on MacOS  
+> Including: 
+> - Editor: nvim
+> - Terminal emulators: alacritty, wezterm, kitty
+> - Terminal tools: lazygit, tmux, starship
+> - Input method: rime
 
 ## Install
 ```sh
@@ -10,3 +14,5 @@ rsync -avh --ignore-existing ~/dotconfigs/* ~/.config
 
 rm -r ~/dotconfigs
 ```
+
+check [Rime](/Rime/README.md) for rime input method configuration.
