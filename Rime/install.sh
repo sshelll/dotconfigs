@@ -11,7 +11,7 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-if [ ! -d "custom_phrase.txt" ]; then
+if [ ! -f "custom_phrase.txt" ]; then
     echo -e "Creating 'custom_phrase.txt'\n"
     touch "$SCRIPT_DIR/custom_phrase.txt"
     echo "Bonjour	hello" >"$SCRIPT_DIR/custom_phrase.txt"
