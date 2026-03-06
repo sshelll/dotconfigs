@@ -5,8 +5,10 @@ patch:
   "menu/page_size": 6
 
   key_binder/bindings/=:
-    - { accept: "Control+k", send: Page_Up, when: composing }
-    - { accept: "Control+j", send: Page_Down, when: composing }
+    - { accept: "Control+k", send: Up, when: composing }
+    - { accept: "Control+j", send: Down, when: composing }
+    - { accept: "Control+h", send: Page_Up, when: composing }
+    - { accept: "Control+l", send: Page_Down, when: composing }
 
   ascii_composer/good_old_caps_lock: true
   ascii_composer/switch_key:
