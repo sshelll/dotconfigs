@@ -29,7 +29,7 @@ patch:
     spacing: 0
     shadow_size: 10
     alpha: 0.95
-    memorize_size: true
+    memorize_size: false # 一次輸入過程中，候選框觸及屏幕邊緣時是否粘住不再縮回，避免來回跳動
     mutual_exclusive: false # 控制半透明顏色是否互相疊加, false 表示疊加
 
   preset_color_schemes/+:
