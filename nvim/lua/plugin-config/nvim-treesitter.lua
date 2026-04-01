@@ -37,3 +37,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		pcall(vim.treesitter.start)
 	end,
 })
+
+-- use this to register filetype and parser name if they are different
+-- vim.treesitter.language.register("c_sharp", { "csharp", "c_sharp" })
