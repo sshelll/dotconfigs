@@ -337,7 +337,6 @@ local pluglist = {
 	},
 	{
 		"RRethy/vim-illuminate",
-		enabled = true,
 		event = "VeryLazy",
 		config = function()
 			require("plugin-config/illuminate")
