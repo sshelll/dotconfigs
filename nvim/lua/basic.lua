@@ -103,3 +103,7 @@ vim.opt.listchars = {
 vim.cmd(
 	"autocmd FileType help,terminal,dashboard,packer,lspinfo,TelescopePrompt,TelescopeResults,NvimTree,Trouble,Outline,gitcommit,gitrebase,svn,hgcommit setlocal nolist"
 )
+
+-- unset gr* to avoid waiting for key sequence when pressing gr
+vim.keymap.del("x", "gra")
+vim.keymap.del("n", "grx")

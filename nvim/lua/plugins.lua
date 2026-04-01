@@ -544,8 +544,6 @@ local pluglist = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
-		dependencies = { "OXY2DEV/markview.nvim" },
-		branch = "master",
 		build = ":TSUpdate",
 		config = function()
 			require("plugin-config/nvim-treesitter")
@@ -560,17 +558,11 @@ local pluglist = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = "VeryLazy",
-		config = function()
-			require("plugin-config/nvim-treesitter-text-obj")
+		branch = "main",
+		init = function()
+			vim.g.no_plugin_maps = true
 		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-refactor",
-		event = "VeryLazy",
-		config = function()
-			require("plugin-config/nvim-treesitter-refactor")
-		end,
+		opts = {},
 	},
 	{
 		"nvim-lualine/lualine.nvim",
