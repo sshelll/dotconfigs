@@ -30,6 +30,7 @@ require("nvim-treesitter").install({
 	"ssh_config",
 	"nginx",
 	"typst",
+	"solidity",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
