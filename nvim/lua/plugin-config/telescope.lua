@@ -12,6 +12,7 @@ require("telescope").setup({
 	},
 	pickers = {
 		find_files = {
+			find_command = { "fd", "--type", "f", "--hidden", "--strip-cwd-prefix" },
 			layout_strategy = "vertical",
 			layout_config = {
 				height = 0.8,
