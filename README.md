@@ -15,4 +15,4 @@ rsync -avh --ignore-existing ~/dotconfigs/* ~/.config
 rm -r ~/dotconfigs
 ```
 
-check [Rime](/Rime/README.md) for rime input method configuration.
+check [Rime](./Rime/README.md) for rime input method configuration.
