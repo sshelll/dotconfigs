@@ -26,6 +26,11 @@ for item in "$SCRIPT_DIR"/*; do
         continue
     fi
 
+    # skip the submodule directory
+    if [ "$filename" = "submodule" ]; then
+        continue
+    fi
+
     dest="$TARGET$filename"
 
     if [ -e "$dest" ] || [ -L "$dest" ]; then
@@ -36,5 +41,11 @@ for item in "$SCRIPT_DIR"/*; do
     ln -s "$item" "$dest"
     echo -e "Linked $filename -> $dest\n"
 done
+
+# Add submodule for plum
+git submodule add --force https://github.com/rime/plum.git submodule/plum
+
+# install rime-ice
+cd submodule/plum && bash rime-install iDvel/rime-ice
 
 echo "Done!"

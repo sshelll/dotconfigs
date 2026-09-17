@@ -11,7 +11,9 @@ Pre-requisite:
   - `brew install --cask font-departure-mono-nerd-font`
   - `brew install --cask font-ark-pixel-12px-proportional`
 
-Then use `./install.sh` to install the configuration.
+Then use `./install.sh` to install the configuration for the first run.
+
+After that, you can use `make xxx` to update the `rime-ice`.
 
 ## Custom Phrases
 

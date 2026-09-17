@@ -19,4 +19,5 @@ patch:
     Control_R: noop
 
   schema_list:
+    - schema: rime_ice # 雾凇拼音（全拼）
     - schema: luna_pinyin # 朙月拼音
