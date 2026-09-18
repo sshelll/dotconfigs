@@ -10,6 +10,7 @@ Pre-requisite:
 - install the fonts:
   - `brew install --cask font-departure-mono-nerd-font`
   - `brew install --cask font-ark-pixel-12px-proportional`
+  - [MiSans L3](https://hyperos.mi.com/font/zh/rare-word/)
 
 Then use `./install.sh` to install the configuration for the first run.
 

@@ -9,7 +9,7 @@ patch:
   style:
     candidate_format: "[label].[candidate] [comment]"
     # font_face: "苹方-繁,苹方-简"
-    font_face: "Ark Pixel 12px Prop zh_cn"
+    font_face: "Ark Pixel 12px Prop zh_cn, MiSans L3"
     font_point: 14 # 字號
     label_font_face: "DepartureMono Nerd Font"
     label_font_point: 14 # 標籤字號
