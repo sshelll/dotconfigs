@@ -11,4 +11,5 @@
 !Rime/
 atuin/*
 !atuin/config.toml
+!shadowrocket/
 !.gitignore
