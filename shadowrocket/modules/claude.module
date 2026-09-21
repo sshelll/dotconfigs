@@ -1,0 +1,29 @@
+#!name=chatgpt
+#!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
+#!desc=Created:09-21 14:44 Publisher:sshelll
+
+[Proxy Group]
+Claude = select,🇨🇳 台湾 02,use=true
+
+[Rule]
+DOMAIN-SUFFIX,anthropic.com,Claude
+DOMAIN-SUFFIX,claude.ai,Claude
+DOMAIN-SUFFIX,claude.com,Claude
+DOMAIN-SUFFIX,clau.de,Claude
+DOMAIN-SUFFIX,claudemcpclient.com,Claude
+DOMAIN-SUFFIX,claudemcpcontent.com,Claude
+DOMAIN-SUFFIX,claudeusercontent.com,Claude
+DOMAIN,servd-anthropic-website.b-cdn.net,Claude
+DOMAIN,anthropic.com.cdn.cloudflare.net,Claude
+DOMAIN,anthropic.auth0.com,Claude
+DOMAIN,anthropic-com.ghost.io,Claude
+DOMAIN-SUFFIX,sentry.io,Claude
+DOMAIN-SUFFIX,statsigapi.net,Claude
+DOMAIN,browser-intake-us5-datadoghq.com,Claude
+DOMAIN-KEYWORD,datadog,Claude
+DOMAIN-KEYWORD,sift,Claude
+DOMAIN-SUFFIX,intercom.io,Claude
+DOMAIN-SUFFIX,intercomcdn.com,Claude
+DOMAIN,cdn.usefathom.com,Claude
+IP-CIDR,160.79.104.0/21,Claude,no-resolve
+IP-CIDR6,2607:6bc0::/32,Claude,no-resolve

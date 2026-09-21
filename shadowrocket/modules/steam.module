@@ -1,0 +1,35 @@
+#!name=steam
+#!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
+#!desc=Created:09-21 11:50 Publisher:sshelll
+
+[Proxy Group]
+Steam = select,🇭🇰 香港 02,use=true
+
+[Rule]
+DOMAIN-SUFFIX,steamcommunity.com,Steam
+DOMAIN-SUFFIX,steampowered.com,Steam
+DOMAIN-SUFFIX,fanatical.com,Steam
+DOMAIN-SUFFIX,humblebundle.com,Steam
+DOMAIN-SUFFIX,playartifact.com,Steam
+DOMAIN-SUFFIX,s.team,Steam
+DOMAIN-SUFFIX,steam-api.com,Steam
+DOMAIN-SUFFIX,steam-chat.com,Steam
+DOMAIN-SUFFIX,steam.apac.qtlglb.com,Steam
+DOMAIN-SUFFIX,steam.cdn.on.net,Steam
+DOMAIN-SUFFIX,steam.cdn.orcon.net.nz,Steam
+DOMAIN-SUFFIX,steam.cdn.slingshot.co.nz,Steam
+DOMAIN-SUFFIX,steam.cdn.webra.ru,Steam
+DOMAIN-SUFFIX,steam.eca.qtlglb.com,Steam
+DOMAIN-SUFFIX,steam.naeu.qtlglb.com,Steam
+DOMAIN-SUFFIX,steam.ru.qtlglb.com,Steam
+DOMAIN-SUFFIX,steam.tv,Steam
+DOMAIN-SUFFIX,steamdeck.com,Steam
+DOMAIN-SUFFIX,steamgames.com,Steam
+DOMAIN-SUFFIX,steammobile.akamaized.net,Steam
+DOMAIN-SUFFIX,steampipe-kr.akamaized.net,Steam
+DOMAIN-SUFFIX,steampipe-partner.akamaized.net,Steam
+DOMAIN-SUFFIX,steamstat.us,Steam
+DOMAIN-SUFFIX,steamstatic.com,Steam
+DOMAIN-SUFFIX,steamunlocked.net,Steam
+DOMAIN-SUFFIX,underlords.com,Steam
+DOMAIN-SUFFIX,valvesoftware.com,Steam

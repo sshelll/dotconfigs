@@ -1,0 +1,9 @@
+#!name=mismatch
+#!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
+#!desc=Created:09-21 11:50 Publisher:sshelll
+
+[Proxy Group]
+Mismatch = select,🇨🇳 台湾 02,use=true
+
+[Rule]
+MATCH,Mismatch
