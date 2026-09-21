@@ -5,6 +5,7 @@
 [Proxy Group]
 Bilibili = select,DIRECT
 
+[Rule]
 DOMAIN,p-bstarstatic.akamaized.net,Bilibili
 DOMAIN,p.bstarstatic.com,Bilibili
 DOMAIN,upos-bstar-mirrorakam.akamaized.net,Bilibili
