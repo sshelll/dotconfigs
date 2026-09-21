@@ -1,9 +1,6 @@
 #!name=chatgpt
 #!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
-#!desc=Created:09-21 14:44 Publisher:sshelll
-
-[Proxy Group]
-Claude = select,🇨🇳 台湾 02,use=true
+#!desc=Created:09-21 15:18 Publisher:sshelll
 
 [Rule]
 DOMAIN-SUFFIX,anthropic.com,Claude

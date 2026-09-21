@@ -1,9 +1,6 @@
 #!name=bilibili
 #!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
-#!desc=Created:09-21 11:50 Publisher:sshelll
-
-[Proxy Group]
-Bilibili = select,DIRECT
+#!desc=Created:09-21 15:18 Publisher:sshelll
 
 [Rule]
 DOMAIN,p-bstarstatic.akamaized.net,Bilibili

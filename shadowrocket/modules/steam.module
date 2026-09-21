@@ -1,9 +1,6 @@
 #!name=steam
 #!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
-#!desc=Created:09-21 11:50 Publisher:sshelll
-
-[Proxy Group]
-Steam = select,🇭🇰 香港 02,use=true
+#!desc=Created:09-21 15:18 Publisher:sshelll
 
 [Rule]
 DOMAIN-SUFFIX,steamcommunity.com,Steam
