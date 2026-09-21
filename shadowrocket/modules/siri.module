@@ -1,17 +1,17 @@
 #!name=siri
 #!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
-#!desc=Created:09-21 15:18 Publisher:sshelll
+#!desc=Created:09-21 17:02 Publisher:sshelll
 
 [Rule]
-DOMAIN-SUFFIX,ls.apple.com,Siri
-DOMAIN-SUFFIX,mask-api.icloud.com,Siri
-DOMAIN-SUFFIX,mask-h2.icloud.com,Siri
-DOMAIN-SUFFIX,mask.icloud.com,Siri
-DOMAIN-KEYWORD,gspel-ssl,Siri
-DOMAIN-SUFFIX,smoot.apple.com,Siri
-DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,Siri
-DOMAIN-SUFFIX,guzzoni.apple.com,Siri
-DOMAIN-SUFFIX,gateway.icloud.com,Siri
-DOMAIN-KEYWORD,apple-relay,Siri
-DOMAIN-SUFFIX,apple.com,Siri
-DOMAIN-SUFFIX,cdn-apple.com,Siri
+DOMAIN-SUFFIX,ls.apple.com,PROXY
+DOMAIN-SUFFIX,mask-api.icloud.com,PROXY
+DOMAIN-SUFFIX,mask-h2.icloud.com,PROXY
+DOMAIN-SUFFIX,mask.icloud.com,PROXY
+DOMAIN-KEYWORD,gspel-ssl,PROXY
+DOMAIN-SUFFIX,smoot.apple.com,PROXY
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,PROXY
+DOMAIN-SUFFIX,guzzoni.apple.com,PROXY
+DOMAIN-SUFFIX,gateway.icloud.com,PROXY
+DOMAIN-KEYWORD,apple-relay,PROXY
+DOMAIN-SUFFIX,apple.com,PROXY
+DOMAIN-SUFFIX,cdn-apple.com,PROXY
