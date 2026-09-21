@@ -1,6 +1,6 @@
 #!name=siri
 #!homepage=https://github.com/sshelll/dotconfigs/shadowrocket
-#!desc=Created:09-21 11:43 Publisher:sshelll
+#!desc=Created:09-21 11:50 Publisher:sshelll
 
 [Rule]
 DOMAIN-SUFFIX,ls.apple.com,PROXY
@@ -13,3 +13,5 @@ DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com,PROXY
 DOMAIN-SUFFIX,guzzoni.apple.com,PROXY
 DOMAIN-SUFFIX,gateway.icloud.com,PROXY
 DOMAIN-KEYWORD,apple-relay,PROXY
+DOMAIN-SUFFIX,apple.com,PROXY
+DOMAIN-SUFFIX,cdn-apple.com,PROXY
