@@ -1,10 +1,11 @@
 # ShadowRocket
 
-> submodules for shadowrocket
+Submodules for shadowrocket.
 
 ## Install
 
-> copy the link from the submodule you want to install, and paste it in shadowrocket's "Import from URL" on module page.
+> Copy the link from the submodule you want to install, and paste it in shadowrocket's "Import from URL" on module page.
+
 > [!WARNING]
 > Before importing, make sure you've created the `[Proxy Group]` in shadowrocket, otherwise the module will not work.
 
