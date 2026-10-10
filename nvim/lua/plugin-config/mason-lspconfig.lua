@@ -12,7 +12,6 @@ vim.lsp.config("move_analyzer", {
 	capabilities = capabilities,
 })
 vim.lsp.enable("move_analyzer")
--- vim.lsp.enable("solidity_ls_nomicfoundation")
 vim.lsp.enable("solidity_ls")
 vim.lsp.enable("sourcekit")
 
@@ -99,16 +98,6 @@ require("mason-lspconfig").setup({
 		["millet"] = function()
 			vim.lsp.config.millet.setup({
 				cmd = { "millet" },
-			})
-		end,
-		["solc"] = function()
-			vim.lsp.config.solc.setup({
-				cmd = { "solc", "--lsp" },
-				filetypes = { "solidity" },
-				root_dir = function(bufnr, on_dir)
-					local fname = vim.api.nvim_buf_get_name(bufnr)
-					on_dir(require("lspconfig.util").root_pattern("hardhat.config.*", ".git")(fname))
-				end,
 			})
 		end,
 		["solidity_ls_nomicfoundation"] = function()
