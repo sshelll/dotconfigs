@@ -317,6 +317,11 @@ local pluglist = {
 		lazy = true,
 	},
 	{
+		"LukasPietzschmann/telescope-tabs",
+		opts = {},
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
+	{
 		"numToStr/Comment.nvim",
 		event = "VeryLazy",
 		config = function()

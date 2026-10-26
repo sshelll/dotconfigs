@@ -103,6 +103,13 @@ require("telescope").setup({
 				},
 			},
 		},
+		["telescope-tabs"] = {
+			layout_strategy = "vertical",
+			layout_config = {
+				width = 0.5,
+				height = 0.8,
+			},
+		},
 	},
 })
 
@@ -113,5 +120,6 @@ require("telescope").load_extension("notify")
 require("telescope").load_extension("projects")
 require("telescope").load_extension("gott")
 require("telescope").load_extension("switch")
+require("telescope").load_extension("telescope-tabs")
 
 vim.g.ackhighlight = 1

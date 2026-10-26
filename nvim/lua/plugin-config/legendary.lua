@@ -124,6 +124,13 @@ require("legendary").setup({
 			icon = "",
 			keymaps = {
 				{
+					"<C-t>",
+					function()
+						require("telescope-tabs").list_tabs()
+					end,
+					description = "search in the current work dir with Telescope",
+				},
+				{
 					"<C-p>",
 					telescope_builtin.live_grep,
 					description = "search in the current work dir with Telescope",
